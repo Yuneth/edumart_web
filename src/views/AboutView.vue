@@ -57,9 +57,7 @@
             <p class="section-label">Our Vision</p>
             <h3>Trusted & Innovative</h3>
             <p>
-              To become a trusted and innovative supply chain solutions provider in
-              Sri Lanka with regional expansion capabilities — setting the benchmark
-              for operational excellence in the education sector and beyond.
+              To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities. 
             </p>
           </div>
           <div class="vm-card vm-card--mission" data-aos="fade-up" data-aos-delay="150">
@@ -67,9 +65,7 @@
             <p class="section-label">Our Mission</p>
             <h3>Efficient & Transparent</h3>
             <p>
-              To deliver efficient, transparent, and scalable operational solutions
-              that support long-term institutional and corporate growth through
-              structured systems and professional management.
+              To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth. 
             </p>
           </div>
         </div>

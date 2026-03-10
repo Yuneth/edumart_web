@@ -77,7 +77,7 @@
           </p>
           <p style="margin-top:1rem;">
             We specialize in procurement, logistics, warehousing, cargo transportation,
-            and supply chain consultancy—delivering structured end-to-end operational
+            and supply chain consultancy delivering structured end-to-end operational
             support tailored to institutional requirements.
           </p>
           <router-link to="/about" class="btn btn-dark" style="margin-top:2rem;">
