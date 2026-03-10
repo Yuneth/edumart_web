@@ -5,7 +5,7 @@
       <div class="hero__bg-pattern"></div>
       <div class="container hero__inner">
         <div class="hero__content" data-aos="fade-right" data-aos-duration="1000">
-          <p class="section-label">Sri Lanka's Trusted Partner1</p>
+          <p class="section-label">Sri Lanka's Trusted Partner</p>
           <h1 class="hero__title">
             Integrated<br>
             <em>Supply Chain</em><br>
