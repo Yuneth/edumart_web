@@ -5,7 +5,6 @@
       <!-- Logo -->
       <router-link to="/" class="navbar__logo" @click="closeMenu">
         <span class="logo-mark">E</span>
-        <!-- <img src="@/assets/images/logo.png" alt="Edumart Logo" class="logo-img" /> -->
         <div class="logo-text">
           <span class="logo-title">EDUMART</span>
           <span class="logo-sub">PVT LTD</span>
@@ -252,11 +251,20 @@ export default {
 .mobile-menu-enter-from,
 .mobile-menu-leave-to { opacity: 0; transform: translateY(-10px); }
 
+@media (max-width: 900px) {
+  .nav-link { font-size: 0.72rem; padding: 0.5rem 0.6rem; }
+  .navbar__actions .btn { display: none; }
+}
 @media (max-width: 768px) {
   .burger { display: flex; }
   .navbar__links { display: none; }
+  .navbar__actions .btn { display: none; }
+  .mobile-nav { padding: 1.25rem 1.5rem 2rem; }
 }
-@media (max-width: 900px) {
-  .nav-link { font-size: 0.72rem; padding: 0.5rem 0.6rem; }
+@media (max-width: 380px) {
+  .logo-title { font-size: 0.9rem; }
+  .logo-mark  { width: 36px; height: 36px; font-size: 1.2rem; }
+  .navbar     { padding: 1rem 0; }
+  .navbar--scrolled { padding: 0.75rem 0; }
 }
 </style>

@@ -66,20 +66,20 @@ export default {
   data() {
     return {
       revenueStreams: [
-        // { title: 'Procurement Management Fees',      desc: 'Service fees charged for end-to-end procurement and supplier management services.' },
-        // { title: 'Logistics Coordination Margins',   desc: 'Margin earned on logistics coordination, including freight forwarding and route optimization.' },
-        // { title: 'Warehousing & Storage Income',     desc: 'Revenue from secure warehousing, inventory management, and storage services.' },
-        // { title: 'Transportation Revenue',           desc: 'Income from inland cargo transportation and institutional delivery services.' },
-        // { title: 'Consultancy Service Fees',         desc: 'Fee-based consultancy for supply chain strategy, procurement, and operational structuring.' },
-        // { title: 'Future Import & Distribution',     desc: 'Planned revenue from direct import operations and distribution of educational materials and equipment.' },
+        { title: 'Procurement Management Fees',      desc: 'Service fees charged for end-to-end procurement and supplier management services.' },
+        { title: 'Logistics Coordination Margins',   desc: 'Margin earned on logistics coordination, including freight forwarding and route optimization.' },
+        { title: 'Warehousing & Storage Income',     desc: 'Revenue from secure warehousing, inventory management, and storage services.' },
+        { title: 'Transportation Revenue',           desc: 'Income from inland cargo transportation and institutional delivery services.' },
+        { title: 'Consultancy Service Fees',         desc: 'Fee-based consultancy for supply chain strategy, procurement, and operational structuring.' },
+        { title: 'Future Import & Distribution',     desc: 'Planned revenue from direct import operations and distribution of educational materials and equipment.' },
       ],
       advantages: [
-        // 'Established institutional client base in the education sector',
-        // 'Structured operational systems ready for scaling',
-        // 'Strong growth potential within Sri Lanka\'s education sector',
-        // 'Expandable logistics infrastructure with low marginal cost',
-        // 'Experienced management team with deep industry knowledge',
-        // 'Clear roadmap to multi-industry expansion',
+        'Established institutional client base in the education sector',
+        'Structured operational systems ready for scaling',
+        'Strong growth potential within Sri Lanka\'s education sector',
+        'Expandable logistics infrastructure with low marginal cost',
+        'Experienced management team with deep industry knowledge',
+        'Clear roadmap to multi-industry expansion',
       ]
     }
   }
@@ -154,6 +154,19 @@ export default {
 }
 .advantage-item span:last-child { font-size: 0.9rem; color: rgba(255,255,255,0.75); }
 
-@media (max-width: 900px) { .revenue-grid { grid-template-columns: 1fr 1fr; } .advantage-grid { grid-template-columns: 1fr; } }
-@media (max-width: 580px) { .revenue-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .revenue-grid   { grid-template-columns: 1fr 1fr; }
+  .advantage-grid { grid-template-columns: 1fr; }
+  .inv-advantage  { padding: 3rem 2rem; margin: 0; }
+}
+@media (max-width: 768px) {
+  .page-hero      { padding: 110px 0 60px; }
+  .inv-advantage  { padding: 2.5rem 1.5rem; border-radius: var(--radius-md); }
+}
+@media (max-width: 580px) {
+  .revenue-grid   { grid-template-columns: 1fr; }
+  .revenue-card   { padding: 1.5rem; }
+  .revenue-card__num { font-size: 1.8rem; }
+  .inv-advantage  { padding: 2rem 1.25rem; }
+}
 </style>

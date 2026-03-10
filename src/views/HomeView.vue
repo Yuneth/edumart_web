@@ -514,18 +514,55 @@ export default {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .why-grid      { grid-template-columns: repeat(2, 1fr); }
-  .clients-grid  { grid-template-columns: repeat(2, 1fr); }
+  .services-grid        { grid-template-columns: repeat(2, 1fr); }
+  .why-grid             { grid-template-columns: repeat(2, 1fr); }
+  .clients-grid         { grid-template-columns: repeat(2, 1fr); }
+  .about-snippet__inner { gap: 3rem; }
 }
 @media (max-width: 768px) {
-  .hero__inner         { grid-template-columns: 1fr; gap: 3rem; padding-top: 1.5rem; }
-  .hero__visual        { display: none; }
-  .about-snippet__inner{ grid-template-columns: 1fr; gap: 3rem; }
-  .stats-band__grid    { grid-template-columns: repeat(2, 1fr); }
-  .services-grid       { grid-template-columns: 1fr; }
-  .why-grid            { grid-template-columns: 1fr; }
-  .clients-grid        { grid-template-columns: 1fr; }
-  .cta-banner__inner   { text-align: center; justify-content: center; }
+  .hero {
+    padding-top: 80px;
+    min-height: auto;
+  }
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .hero__visual          { display: none; }
+  .hero__title           { font-size: clamp(2.2rem, 9vw, 3rem); }
+  .hero__subtitle        { font-size: 0.95rem; }
+  .hero__actions         { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn    { width: 100%; justify-content: center; }
+  .hero__scroll          { display: none; }
+
+  .about-snippet__inner  { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .stats-band__grid      { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stat-num              { font-size: 2.2rem; }
+
+  .services-grid         { grid-template-columns: 1fr; }
+  .why-grid              { grid-template-columns: 1fr; }
+  .clients-grid          { grid-template-columns: 1fr; }
+
+  .cta-banner            { padding: 3.5rem 0; }
+  .cta-banner__inner     { text-align: center; justify-content: center; flex-direction: column; gap: 2rem; }
+  .cta-banner__actions   { justify-content: center; }
+  .cta-banner__actions .btn { flex: 1; min-width: 140px; justify-content: center; }
+}
+@media (max-width: 480px) {
+  .stats-band            { padding: 2rem 0; }
+  .stats-band__grid      { gap: 0.75rem; }
+  .stat-num              { font-size: 1.9rem; }
+  .stat-label            { font-size: 0.65rem; }
+
+  .pillar-card           { flex-direction: column; gap: 0.75rem; }
+  .service-card          { padding: 1.5rem; }
+  .why-card              { padding: 1.2rem; }
+  .client-card           { padding: 1.75rem 1.25rem; }
+
+  .cta-banner__actions   { flex-direction: column; width: 100%; }
+  .cta-banner__actions .btn { width: 100%; }
 }
 </style>

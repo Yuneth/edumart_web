@@ -280,6 +280,15 @@ export default {
 
 @media (max-width: 900px) {
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .form-row { grid-template-columns: 1fr; }
+  .form-row     { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .page-hero            { padding: 110px 0 60px; }
+  .contact-form-wrap    { padding: 2rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .contact-form-wrap    { padding: 1.5rem 1rem; border-radius: var(--radius-md); }
+  .contact-detail__icon { width: 38px; height: 38px; font-size: 1.1rem; }
+  .btn-full             { padding: 0.85rem 1rem; font-size: 0.8rem; }
 }
 </style>

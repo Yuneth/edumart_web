@@ -33,10 +33,10 @@ export default {
   data() {
     return {
       industries: [
-        // { icon: '🎓', title: 'Education Sector',             desc: 'Comprehensive supply chain solutions for educational institutions including procurement, logistics, and warehousing.', active: true },
-        // { icon: '🏛️', title: 'Institutional Organizations',  desc: 'Operational support for institutional bodies requiring structured procurement and inventory management systems.', active: true },
-        // { icon: '🏢', title: 'Corporate Entities',           desc: 'End-to-end supply chain services tailored for corporate environments with scalable logistics infrastructure.', active: true },
-        // { icon: '🌐', title: 'Multi-Industry Expansion',     desc: 'Edumart is strategically positioned to expand into new industries, bringing proven operational systems to new sectors.', active: false },
+        { icon: '🎓', title: 'Education Sector',             desc: 'Comprehensive supply chain solutions for educational institutions including procurement, logistics, and warehousing.', active: true },
+        { icon: '🏛️', title: 'Institutional Organizations',  desc: 'Operational support for institutional bodies requiring structured procurement and inventory management systems.', active: true },
+        { icon: '🏢', title: 'Corporate Entities',           desc: 'End-to-end supply chain services tailored for corporate environments with scalable logistics infrastructure.', active: true },
+        { icon: '🌐', title: 'Multi-Industry Expansion',     desc: 'Edumart is strategically positioned to expand into new industries, bringing proven operational systems to new sectors.', active: false },
       ]
     }
   }
@@ -69,5 +69,11 @@ export default {
 .status--active { background: #ecfdf5; color: #065f46; }
 .status--future { background: var(--gold-pale); color: #7a5e1c; }
 
-@media (max-width: 600px) { .industries-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .page-hero       { padding: 110px 0 60px; }
+  .industries-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .industry-card   { padding: 1.75rem 1.5rem; }
+}
 </style>

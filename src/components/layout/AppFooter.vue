@@ -245,11 +245,21 @@ export default {
 }
 
 @media (max-width: 1024px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 768px) {
+  .footer__cta-band        { padding: 2.5rem 0; }
+  .footer__cta-inner       { text-align: center; justify-content: center; flex-direction: column; gap: 1.5rem; }
+  .footer__cta-inner .btn  { width: 100%; max-width: 280px; justify-content: center; }
+  .footer__main            { padding: 3rem 0 1.5rem; }
 }
 @media (max-width: 600px) {
-  .footer__grid { grid-template-columns: 1fr; }
-  .footer__cta-inner { text-align: center; justify-content: center; }
-  .footer__bottom-inner { justify-content: center; text-align: center; }
+  .footer__grid            { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__cta-inner       { text-align: center; justify-content: center; }
+  .footer__bottom-inner    { justify-content: center; text-align: center; flex-direction: column; gap: 0.5rem; }
+  .footer__desc            { max-width: 100%; }
+}
+@media (max-width: 400px) {
+  .footer__cta-inner .btn  { max-width: 100%; }
 }
 </style>

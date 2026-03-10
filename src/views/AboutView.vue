@@ -257,12 +257,25 @@ export default {
 .value-card h4 { margin-bottom: 0.5rem; }
 .value-card p  { font-size: 0.875rem; color: var(--text-muted); }
 
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .values-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 768px) {
-  .about-grid  { grid-template-columns: 1fr; gap: 3rem; }
-  .vm-grid     { grid-template-columns: 1fr; }
-  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .page-hero    { padding: 110px 0 60px; }
+  .about-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
+  .vm-grid      { grid-template-columns: 1fr; }
+  .vm-card      { padding: 2rem; }
+  .vm-card--vision h3,
+  .vm-card--mission h3 { font-size: 1.3rem; }
+  .values-grid  { grid-template-columns: repeat(2, 1fr); }
+  .about-badge  { padding: 1.5rem 2rem; }
+  .about-badge__num { font-size: 3rem; }
 }
 @media (max-width: 500px) {
-  .values-grid { grid-template-columns: 1fr; }
+  .values-grid    { grid-template-columns: 1fr; }
+  .about-badge    { flex-direction: column; gap: 0.5rem; text-align: center; align-self: stretch; padding: 1.5rem; }
+  .about-badge__num { font-size: 2.5rem; }
+  .value-card     { padding: 1.5rem; }
 }
 </style>

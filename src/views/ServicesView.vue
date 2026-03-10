@@ -46,64 +46,64 @@ export default {
   data() {
     return {
       services: [
-        // {
-        //   icon: '📦',
-        //   title: 'Procurement & Purchasing Management',
-        //   description: 'We ensure high-quality products at competitive pricing while maintaining strong and reliable supplier networks. Our strategic approach to procurement reduces costs and improves supply reliability.',
-        //   features: [
-        //     'Strategic sourcing and supplier evaluation',
-        //     'Vendor negotiation and cost optimization',
-        //     'Institutional purchasing coordination',
-        //     'Import purchasing management',
-        //     'Vendor relationship development',
-        //   ]
-        // },
-        // {
-        //   icon: '🚚',
-        //   title: 'Logistics Handling Services',
-        //   description: 'Our logistics solutions are designed to reduce delays and improve operational efficiency. We coordinate both local and international freight with full documentation support.',
-        //   features: [
-        //     'Local and international logistics coordination',
-        //     'Import and export documentation',
-        //     'Shipment tracking and monitoring',
-        //     'Delivery scheduling and route optimization',
-        //   ]
-        // },
-        // {
-        //   icon: '🏭',
-        //   title: 'Warehousing & Inventory Management',
-        //   description: 'We provide scalable and organized warehousing solutions tailored to institutional growth. Our inventory systems ensure accurate stock visibility at all times.',
-        //   features: [
-        //     'Secure storage facilities',
-        //     'Inventory control systems',
-        //     'Stock monitoring and reporting',
-        //     'Distribution coordination',
-        //     'Asset and materials management',
-        //   ]
-        // },
-        // {
-        //   icon: '🚛',
-        //   title: 'Cargo Transportation Services',
-        //   description: 'Our transportation network ensures timely and secure movement of goods. We handle everything from routine scheduled deliveries to urgent institutional requirements.',
-        //   features: [
-        //     'Inland cargo transportation',
-        //     'Institutional material distribution',
-        //     'Safe handling procedures',
-        //     'Scheduled and urgent deliveries',
-        //   ]
-        // },
-        // {
-        //   icon: '📊',
-        //   title: 'Supply Chain Consultation Services',
-        //   description: 'We help organizations build structured, efficient, and future-ready operational systems. Our consultancy is grounded in practical experience and best-practice frameworks.',
-        //   features: [
-        //     'Supply chain process optimization',
-        //     'Procurement strategy development',
-        //     'Cost control and budgeting advisory',
-        //     'Import and logistics planning',
-        //     'Operational system structuring',
-        //   ]
-        // },
+        {
+          icon: '📦',
+          title: 'Procurement & Purchasing Management',
+          description: 'We ensure high-quality products at competitive pricing while maintaining strong and reliable supplier networks. Our strategic approach to procurement reduces costs and improves supply reliability.',
+          features: [
+            'Strategic sourcing and supplier evaluation',
+            'Vendor negotiation and cost optimization',
+            'Institutional purchasing coordination',
+            'Import purchasing management',
+            'Vendor relationship development',
+          ]
+        },
+        {
+          icon: '🚚',
+          title: 'Logistics Handling Services',
+          description: 'Our logistics solutions are designed to reduce delays and improve operational efficiency. We coordinate both local and international freight with full documentation support.',
+          features: [
+            'Local and international logistics coordination',
+            'Import and export documentation',
+            'Shipment tracking and monitoring',
+            'Delivery scheduling and route optimization',
+          ]
+        },
+        {
+          icon: '🏭',
+          title: 'Warehousing & Inventory Management',
+          description: 'We provide scalable and organized warehousing solutions tailored to institutional growth. Our inventory systems ensure accurate stock visibility at all times.',
+          features: [
+            'Secure storage facilities',
+            'Inventory control systems',
+            'Stock monitoring and reporting',
+            'Distribution coordination',
+            'Asset and materials management',
+          ]
+        },
+        {
+          icon: '🚛',
+          title: 'Cargo Transportation Services',
+          description: 'Our transportation network ensures timely and secure movement of goods. We handle everything from routine scheduled deliveries to urgent institutional requirements.',
+          features: [
+            'Inland cargo transportation',
+            'Institutional material distribution',
+            'Safe handling procedures',
+            'Scheduled and urgent deliveries',
+          ]
+        },
+        {
+          icon: '📊',
+          title: 'Supply Chain Consultation Services',
+          description: 'We help organizations build structured, efficient, and future-ready operational systems. Our consultancy is grounded in practical experience and best-practice frameworks.',
+          features: [
+            'Supply chain process optimization',
+            'Procurement strategy development',
+            'Cost control and budgeting advisory',
+            'Import and logistics planning',
+            'Operational system structuring',
+          ]
+        },
       ]
     }
   }
@@ -190,9 +190,26 @@ export default {
   flex-shrink: 0;
 }
 
+@media (max-width: 900px) {
+  .service-block {
+    grid-template-columns: 140px 1fr;
+    gap: 2.5rem;
+  }
+}
 @media (max-width: 768px) {
-  .service-block { grid-template-columns: 1fr; gap: 2rem; }
+  .page-hero { padding: 110px 0 60px; }
+  .service-block {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.5rem 0;
+  }
   .service-block--rev { direction: ltr; }
   .service-block__icon-col { justify-content: flex-start; }
+  .service-block__icon-wrap { width: 90px; height: 90px; }
+  .service-block__emoji { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+  .service-block  { padding: 2rem 0; }
+  .service-features li { font-size: 0.85rem; }
 }
 </style>

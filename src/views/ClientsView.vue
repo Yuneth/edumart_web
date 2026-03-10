@@ -46,26 +46,26 @@ export default {
   data() {
     return {
       clients: [
-        // {
-        //   badge: 'Primary Client',
-        //   name: 'Cambridge College of British English International (PVT) Ltd',
-        //   desc: 'Our flagship institutional partner. We provide comprehensive supply chain management including procurement, logistics, and warehousing services to support their international operations.'
-        // },
-        // {
-        //   badge: 'Key Client',
-        //   name: 'Cambridge College of British English',
-        //   desc: 'Providing integrated operational support to ensure smooth day-to-day institutional supply chain operations, from purchasing to delivery.'
-        // },
-        // {
-        //   badge: 'Key Client',
-        //   name: 'Cambridge College of Information Technology',
-        //   desc: 'Supporting IT and technology procurement, logistics coordination, and inventory management for one of Sri Lanka\'s leading technology institutions.'
-        // },
+        {
+          badge: 'Primary Client',
+          name: 'Cambridge College of British English International (PVT) Ltd',
+          desc: 'Our flagship institutional partner. We provide comprehensive supply chain management including procurement, logistics, and warehousing services to support their international operations.'
+        },
+        {
+          badge: 'Key Client',
+          name: 'Cambridge College of British English',
+          desc: 'Providing integrated operational support to ensure smooth day-to-day institutional supply chain operations, from purchasing to delivery.'
+        },
+        {
+          badge: 'Key Client',
+          name: 'Cambridge College of Information Technology',
+          desc: 'Supporting IT and technology procurement, logistics coordination, and inventory management for one of Sri Lanka\'s leading technology institutions.'
+        },
       ],
       promises: [
-        // { icon: '🤝', title: 'Trust',        desc: 'Every relationship is built on a foundation of integrity and transparency.' },
-        // { icon: '🎯', title: 'Reliability',  desc: 'Consistent delivery, every time, without compromise.' },
-        // { icon: '📈', title: 'Performance',  desc: 'Results-driven partnerships focused on measurable outcomes.' },
+        { icon: '🤝', title: 'Trust',        desc: 'Every relationship is built on a foundation of integrity and transparency.' },
+        { icon: '🎯', title: 'Reliability',  desc: 'Consistent delivery, every time, without compromise.' },
+        { icon: '📈', title: 'Performance',  desc: 'Results-driven partnerships focused on measurable outcomes.' },
       ]
     }
   }
@@ -118,8 +118,17 @@ export default {
 .promise-item h4 { margin-bottom: 0.5rem; }
 .promise-item p { font-size: 0.875rem; color: var(--text-muted); }
 
+@media (max-width: 900px) {
+  .promise-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 768px) {
-  .client-full-card { flex-direction: column; gap: 1rem; }
-  .promise-grid { grid-template-columns: 1fr; }
+  .page-hero            { padding: 110px 0 60px; }
+  .client-full-card     { flex-direction: column; gap: 1rem; }
+  .client-full-card__badge { align-self: flex-start; }
+  .promise-grid         { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .client-full-card     { padding: 1.5rem; }
+  .promise-item         { padding: 1.5rem; }
 }
 </style>
