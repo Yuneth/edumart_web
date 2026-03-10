@@ -39,12 +39,12 @@ export default {
   data() {
     return {
       expansionItems: [
-        { icon: '📚', title: 'Educational Materials Import',      desc: 'Establishing direct import channels for educational materials to serve institutions across Sri Lanka at competitive pricing.' },
-        { icon: '🖨️', title: 'Printing & Stationery Supply',     desc: 'Developing a dedicated printing and stationery supply vertical to serve our institutional client base comprehensively.' },
-        { icon: '💻', title: 'IT & Technology Procurement',       desc: 'Building specialized procurement capabilities for IT equipment, software, and technology infrastructure for educational institutions.' },
-        { icon: '🌐', title: 'Digital Supply Chain Systems',      desc: 'Investing in digital platforms and technology to bring real-time supply chain visibility and automation to our clients.' },
-        { icon: '🤝', title: 'Regional Logistics Partnerships',   desc: 'Forming strategic partnerships with regional logistics providers to expand our geographic reach and service capability.' },
-        { icon: '🏗️', title: 'Warehouse Infrastructure',         desc: 'Developing owned warehouse infrastructure to reduce dependency on third parties and improve service consistency.' },
+        // { icon: '📚', title: 'Educational Materials Import',      desc: 'Establishing direct import channels for educational materials to serve institutions across Sri Lanka at competitive pricing.' },
+        // { icon: '🖨️', title: 'Printing & Stationery Supply',     desc: 'Developing a dedicated printing and stationery supply vertical to serve our institutional client base comprehensively.' },
+        // { icon: '💻', title: 'IT & Technology Procurement',       desc: 'Building specialized procurement capabilities for IT equipment, software, and technology infrastructure for educational institutions.' },
+        // { icon: '🌐', title: 'Digital Supply Chain Systems',      desc: 'Investing in digital platforms and technology to bring real-time supply chain visibility and automation to our clients.' },
+        // { icon: '🤝', title: 'Regional Logistics Partnerships',   desc: 'Forming strategic partnerships with regional logistics providers to expand our geographic reach and service capability.' },
+        // { icon: '🏗️', title: 'Warehouse Infrastructure',         desc: 'Developing owned warehouse infrastructure to reduce dependency on third parties and improve service consistency.' },
       ]
     }
   }

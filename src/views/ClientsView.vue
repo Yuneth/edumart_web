@@ -46,26 +46,26 @@ export default {
   data() {
     return {
       clients: [
-        {
-          badge: 'Primary Client',
-          name: 'Cambridge College of British English International (PVT) Ltd',
-          desc: 'Our flagship institutional partner. We provide comprehensive supply chain management including procurement, logistics, and warehousing services to support their international operations.'
-        },
-        {
-          badge: 'Key Client',
-          name: 'Cambridge College of British English',
-          desc: 'Providing integrated operational support to ensure smooth day-to-day institutional supply chain operations, from purchasing to delivery.'
-        },
-        {
-          badge: 'Key Client',
-          name: 'Cambridge College of Information Technology',
-          desc: 'Supporting IT and technology procurement, logistics coordination, and inventory management for one of Sri Lanka\'s leading technology institutions.'
-        },
+        // {
+        //   badge: 'Primary Client',
+        //   name: 'Cambridge College of British English International (PVT) Ltd',
+        //   desc: 'Our flagship institutional partner. We provide comprehensive supply chain management including procurement, logistics, and warehousing services to support their international operations.'
+        // },
+        // {
+        //   badge: 'Key Client',
+        //   name: 'Cambridge College of British English',
+        //   desc: 'Providing integrated operational support to ensure smooth day-to-day institutional supply chain operations, from purchasing to delivery.'
+        // },
+        // {
+        //   badge: 'Key Client',
+        //   name: 'Cambridge College of Information Technology',
+        //   desc: 'Supporting IT and technology procurement, logistics coordination, and inventory management for one of Sri Lanka\'s leading technology institutions.'
+        // },
       ],
       promises: [
-        { icon: '🤝', title: 'Trust',        desc: 'Every relationship is built on a foundation of integrity and transparency.' },
-        { icon: '🎯', title: 'Reliability',  desc: 'Consistent delivery, every time, without compromise.' },
-        { icon: '📈', title: 'Performance',  desc: 'Results-driven partnerships focused on measurable outcomes.' },
+        // { icon: '🤝', title: 'Trust',        desc: 'Every relationship is built on a foundation of integrity and transparency.' },
+        // { icon: '🎯', title: 'Reliability',  desc: 'Consistent delivery, every time, without compromise.' },
+        // { icon: '📈', title: 'Performance',  desc: 'Results-driven partnerships focused on measurable outcomes.' },
       ]
     }
   }

@@ -33,10 +33,10 @@ export default {
   data() {
     return {
       industries: [
-        { icon: '🎓', title: 'Education Sector',             desc: 'Comprehensive supply chain solutions for educational institutions including procurement, logistics, and warehousing.', active: true },
-        { icon: '🏛️', title: 'Institutional Organizations',  desc: 'Operational support for institutional bodies requiring structured procurement and inventory management systems.', active: true },
-        { icon: '🏢', title: 'Corporate Entities',           desc: 'End-to-end supply chain services tailored for corporate environments with scalable logistics infrastructure.', active: true },
-        { icon: '🌐', title: 'Multi-Industry Expansion',     desc: 'Edumart is strategically positioned to expand into new industries, bringing proven operational systems to new sectors.', active: false },
+        // { icon: '🎓', title: 'Education Sector',             desc: 'Comprehensive supply chain solutions for educational institutions including procurement, logistics, and warehousing.', active: true },
+        // { icon: '🏛️', title: 'Institutional Organizations',  desc: 'Operational support for institutional bodies requiring structured procurement and inventory management systems.', active: true },
+        // { icon: '🏢', title: 'Corporate Entities',           desc: 'End-to-end supply chain services tailored for corporate environments with scalable logistics infrastructure.', active: true },
+        // { icon: '🌐', title: 'Multi-Industry Expansion',     desc: 'Edumart is strategically positioned to expand into new industries, bringing proven operational systems to new sectors.', active: false },
       ]
     }
   }
