@@ -66,20 +66,20 @@ export default {
   data() {
     return {
       revenueStreams: [
-        // { title: 'Procurement Management Fees',      desc: 'Service fees charged for end-to-end procurement and supplier management services.' },
-        // { title: 'Logistics Coordination Margins',   desc: 'Margin earned on logistics coordination, including freight forwarding and route optimization.' },
-        // { title: 'Warehousing & Storage Income',     desc: 'Revenue from secure warehousing, inventory management, and storage services.' },
-        // { title: 'Transportation Revenue',           desc: 'Income from inland cargo transportation and institutional delivery services.' },
-        // { title: 'Consultancy Service Fees',         desc: 'Fee-based consultancy for supply chain strategy, procurement, and operational structuring.' },
-        // { title: 'Future Import & Distribution',     desc: 'Planned revenue from direct import operations and distribution of educational materials and equipment.' },
+        { title: 'Procurement Management Fees',      desc: 'Service fees charged for end-to-end procurement and supplier management services.' },
+        { title: 'Logistics Coordination Margins',   desc: 'Margin earned on logistics coordination, including freight forwarding and route optimization.' },
+        { title: 'Warehousing & Storage Income',     desc: 'Revenue from secure warehousing, inventory management, and storage services.' },
+        { title: 'Transportation Revenue',           desc: 'Income from inland cargo transportation and institutional delivery services.' },
+        { title: 'Consultancy Service Fees',         desc: 'Fee-based consultancy for supply chain strategy, procurement, and operational structuring.' },
+        { title: 'Future Import & Distribution',     desc: 'Planned revenue from direct import operations and distribution of educational materials and equipment.' },
       ],
       advantages: [
-        // 'Established institutional client base in the education sector',
-        // 'Structured operational systems ready for scaling',
-        // 'Strong growth potential within Sri Lanka\'s education sector',
-        // 'Expandable logistics infrastructure with low marginal cost',
-        // 'Experienced management team with deep industry knowledge',
-        // 'Clear roadmap to multi-industry expansion',
+        'Established institutional client base in the education sector',
+        'Structured operational systems ready for scaling',
+        'Strong growth potential within Sri Lanka\'s education sector',
+        'Expandable logistics infrastructure with low marginal cost',
+        'Experienced management team with deep industry knowledge',
+        'Clear roadmap to multi-industry expansion',
       ]
     }
   }
