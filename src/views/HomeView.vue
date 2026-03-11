@@ -112,7 +112,7 @@
           </p>
           <p style="margin-top:1rem;">
             We specialize in procurement, logistics, warehousing, cargo transportation,
-            and supply chain consultancy—delivering structured end-to-end operational
+            and supply chain consultancy delivering structured end-to-end operational
             support tailored to institutional requirements.
           </p>
           <router-link to="/about" class="btn btn-dark" style="margin-top:2rem;">
@@ -244,8 +244,8 @@ export default {
         { num: '∞',     label: 'Growth Potential' },
       ],
       pillars: [
-        { icon: '🎯', title: 'Vision', desc: 'Trusted supply chain solutions provider with regional expansion capabilities.' },
-        { icon: '🚀', title: 'Mission', desc: 'Efficient, transparent, and scalable operational solutions for long-term growth.' },
+        { icon: '🎯', title: 'Vision', desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.' },
+        { icon: '🚀', title: 'Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.' },
       ],
       services: [
         { icon: '📦', title: 'Procurement & Purchasing', desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.' },
