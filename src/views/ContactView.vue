@@ -23,7 +23,7 @@
           <div class="divider-gold"></div>
           <p style="margin-bottom:2.5rem;">
             Whether you're looking to streamline your procurement, optimize your logistics,
-            or consult on your supply chain strategy — our team is ready to help.
+            or consult on your supply chain strategy our team is ready to help.
           </p>
 
           <div class="contact-details">
