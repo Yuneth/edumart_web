@@ -22,8 +22,8 @@
           preload="metadata"
           @error="videoReady = false"
         >
-          <source src="/videos/hero-bg.webm" type="video/webm" />
-          <source src="/videos/hero-bg.mp4"  type="video/mp4"  />
+          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4" type="video/webm" />
+          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4"  type="video/mp4"  />
         </video>
       </div>
 
@@ -302,7 +302,7 @@ export default {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.65) brightness(0.5);
+  /* filter: saturate(0.65) brightness(0.5); */
   pointer-events: none;
   /* Fallback: fill whole area on any screen ratio */
   min-width: 100%;
@@ -721,9 +721,9 @@ export default {
   .hcard                 { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .hero__content         { max-width: 100%; }
   .hero__title           { font-size: clamp(2.1rem, 10vw, 2.8rem); margin-bottom: 1rem; }
-  .hero__subtitle        { font-size: 0.93rem; margin-bottom: 1.8rem; max-width: 100%; }
+  .hero__subtitle        { font-size: 0.93rem; margin-bottom: 1.8rem; max-width: 95%; }
   .hero__actions         { flex-direction: column; align-items: stretch; gap: 0.75rem; }
-  .hero__actions .btn    { width: 100%; justify-content: center; padding: 0.95rem 2rem; }
+  .hero__actions .btn    { width: 90%; justify-content: center; padding: 0.95rem 2rem; }
   /* Ensure button colors are not overridden on mobile */
   .hero__actions .btn-primary  { background: var(--gold); color: var(--navy) !important; font-weight: 600; }
   .hero__actions .btn-outline  { background: transparent; color: var(--white) !important; border: 1.5px solid rgba(255,255,255,0.55); }
@@ -811,6 +811,6 @@ export default {
 
 /* Pause video on mobile to save battery & data */
 @media (max-width: 768px) {
-  .hero__video           { filter: saturate(0.6) brightness(0.45); }
+  /* .hero__video           { filter: saturate(0.6) brightness(0.45); } */
 }
 </style>
