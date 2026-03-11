@@ -4,22 +4,26 @@
     <section class="hero">
 
       <!-- Background Video -->
-      <div class="hero__video-wrap">
+      <!--
+        VIDEO SETUP:
+        1. Create folder: public/videos/
+        2. Add files:     public/videos/hero-bg.mp4  (required)
+                          public/videos/hero-bg.webm (optional, for Firefox)
+        Files in /public are served directly and NOT processed by webpack.
+        NEVER use @/assets/ for videos — webpack will error if files are missing.
+      -->
+      <div class="hero__video-wrap" v-if="videoReady">
         <video
           class="hero__video"
           autoplay
           muted
           loop
           playsinline
-          preload="auto"
+          preload="metadata"
+          @error="videoReady = false"
         >
-          <!--
-            Place your video inside: src/assets/videos/
-            Recommended: hero-bg.mp4 and hero-bg.webm (for best browser support)
-            Suggested video: aerial/logistics/warehouse footage, 10-30s loop, 1080p
-          -->
-          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4" type="video/webm" />
-          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4"  type="video/mp4"  />
+          <source src="/videos/hero-bg.webm" type="video/webm" />
+          <source src="/videos/hero-bg.mp4"  type="video/mp4"  />
         </video>
       </div>
 
@@ -51,20 +55,25 @@
           <div class="hero__card-stack">
             <div class="hcard hcard--1">
               <span class="hcard__icon">📦</span>
-              <span>Procurement & Purchasing</span>
+              <span>Procurement &amp; Purchasing</span>
             </div>
             <div class="hcard hcard--2">
               <span class="hcard__icon">🚚</span>
-              <span>Logistics & Transportation</span>
+              <span>Logistics &amp; Transportation</span>
             </div>
             <div class="hcard hcard--3">
               <span class="hcard__icon">🏭</span>
-              <span>Warehousing & Inventory</span>
+              <span>Warehousing &amp; Inventory</span>
             </div>
             <div class="hcard hcard--4">
               <span class="hcard__icon">📊</span>
               <span>Supply Chain Consultation</span>
             </div>
+          </div>
+          <!-- Scroll hint — only shows on mobile -->
+          <div class="cards-scroll-hint">
+            <span>swipe</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
         </div>
       </div>
@@ -103,7 +112,7 @@
           </p>
           <p style="margin-top:1rem;">
             We specialize in procurement, logistics, warehousing, cargo transportation,
-            and supply chain consultancy delivering structured end-to-end operational
+            and supply chain consultancy—delivering structured end-to-end operational
             support tailored to institutional requirements.
           </p>
           <router-link to="/about" class="btn btn-dark" style="margin-top:2rem;">
@@ -225,6 +234,9 @@ export default {
   name: 'HomeView',
   data() {
     return {
+      // videoReady: set to false if you have not added video files yet,
+      // or leave true and add files to public/videos/
+      videoReady: true,
       stats: [
         { num: '5+',    label: 'Core Services' },
         { num: '3+',    label: 'Institutional Clients' },
@@ -232,8 +244,8 @@ export default {
         { num: '∞',     label: 'Growth Potential' },
       ],
       pillars: [
-        { icon: '🎯', title: 'Vision', desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.' },
-        { icon: '🚀', title: 'Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.' },
+        { icon: '🎯', title: 'Vision', desc: 'Trusted supply chain solutions provider with regional expansion capabilities.' },
+        { icon: '🚀', title: 'Mission', desc: 'Efficient, transparent, and scalable operational solutions for long-term growth.' },
       ],
       services: [
         { icon: '📦', title: 'Procurement & Purchasing', desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.' },
@@ -273,6 +285,10 @@ export default {
   overflow: hidden;
   padding-top: 80px;           /* navbar height */
 }
+/* Allow hero to shrink naturally if content is taller than viewport */
+@supports not (min-height: 100svh) {
+  .hero { min-height: 100vh; }
+}
 
 /* ── Video Background ── */
 .hero__video-wrap {
@@ -286,7 +302,7 @@ export default {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* filter: saturate(0.50) brightness(0.5); */
+  filter: saturate(0.65) brightness(0.5);
   pointer-events: none;
   /* Fallback: fill whole area on any screen ratio */
   min-width: 100%;
@@ -365,8 +381,15 @@ export default {
 /* ── Floating service cards ── */
 .hero__visual {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.75rem;
+}
+
+/* Swipe hint — hidden on desktop */
+.cards-scroll-hint {
+  display: none;
 }
 .hero__card-stack {
   display: grid;
@@ -641,17 +664,69 @@ export default {
   .hero                  { padding-top: 70px; min-height: 100svh; }
   .hero__inner           {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 2rem;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
     align-items: flex-start;
   }
-  .hero__visual          { display: none; }
+  /* Cards shown below text on mobile */
+  .hero__visual          {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  /* Swipe hint visible on mobile */
+  .cards-scroll-hint     {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    padding-left: 0.25rem;
+  }
+  .cards-scroll-hint svg { opacity: 0.5; }
+  .hero__card-stack      {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    /* Breathing room so last card is not clipped at scroll end */
+    padding-right: 1.5rem;
+    /* Hide scrollbar visually but keep it functional */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hero__card-stack::-webkit-scrollbar { display: none; }
+  .hcard                 {
+    flex: 0 0 auto;
+    width: 140px;
+    min-height: 115px;
+    padding: 1rem;
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+  .hcard__icon           { font-size: 1.5rem; }
+  /* Disable float animation on mobile — saves battery */
+  .hcard--1, .hcard--2,
+  .hcard--3, .hcard--4   { animation: none; }
+  /* Remove expensive backdrop-filter on mobile */
+  .hcard                 { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .hero__content         { max-width: 100%; }
   .hero__title           { font-size: clamp(2.1rem, 10vw, 2.8rem); margin-bottom: 1rem; }
   .hero__subtitle        { font-size: 0.93rem; margin-bottom: 1.8rem; max-width: 100%; }
   .hero__actions         { flex-direction: column; align-items: stretch; gap: 0.75rem; }
-  .hero__actions .btn    { width: 100%; justify-content: center; padding: 1rem; }
+  .hero__actions .btn    { width: 100%; justify-content: center; padding: 0.95rem 2rem; }
+  /* Ensure button colors are not overridden on mobile */
+  .hero__actions .btn-primary  { background: var(--gold); color: var(--navy) !important; font-weight: 600; }
+  .hero__actions .btn-outline  { background: transparent; color: var(--white) !important; border: 1.5px solid rgba(255,255,255,0.55); }
   .hero__scroll          { display: none; }
   .hero__overlay         { background: rgba(10, 22, 40, 0.82); }
 
@@ -688,6 +763,9 @@ export default {
   .hero                  { padding-top: 64px; }
   .hero__title           { font-size: clamp(1.9rem, 9vw, 2.4rem); }
   .hero__subtitle        { font-size: 0.88rem; line-height: 1.7; }
+  /* Slightly narrower cards on small phones */
+  .hcard                 { width: 125px; min-height: 105px; font-size: 0.72rem; padding: 0.85rem 0.8rem; }
+  .hcard__icon           { font-size: 1.35rem; }
 
   .stats-band__grid      { grid-template-columns: repeat(2, 1fr); }
   .stat-num              { font-size: 1.8rem; }
@@ -717,6 +795,8 @@ export default {
   .hero__title           { font-size: 1.75rem; }
   .hero__subtitle        { font-size: 0.84rem; }
   .stat-num              { font-size: 1.6rem; }
+  .hcard                 { width: 110px; font-size: 0.68rem; padding: 0.75rem 0.7rem; }
+  .hcard__icon           { font-size: 1.2rem; }
 }
 
 /* ═══════════════════════════════
@@ -731,6 +811,6 @@ export default {
 
 /* Pause video on mobile to save battery & data */
 @media (max-width: 768px) {
-  /* .hero__video           { filter: saturate(0.6) brightness(0.45); } */
+  .hero__video           { filter: saturate(0.6) brightness(0.45); }
 }
 </style>
