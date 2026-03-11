@@ -16,7 +16,7 @@
 
     <!-- Overview -->
     <section class="section-pad">
-      <!-- <div class="container about-grid">
+      <div class="container about-grid">
         <div data-aos="fade-right">
           <p class="section-label">Company Overview</p>
           <h2 class="section-title">Who We <em>Are</em></h2>
@@ -35,7 +35,7 @@
         </div>
         <div class="about-visual" data-aos="fade-left" data-aos-delay="150">
           <div class="about-badge">
-            <span class="about-badge__num">5+</span>
+            <span class="about-badge__num">2+</span>
             <span class="about-badge__label">Years of<br>Excellence</span>
           </div>
           <div class="about-spec-list">
@@ -45,12 +45,12 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </section>
 
     <!-- Vision & Mission -->
     <section class="section-pad bg-ivory">
-      <!-- <div class="container">
+      <div class="container">
         <div class="vm-grid">
           <div class="vm-card vm-card--vision" data-aos="fade-up">
             <div class="vm-card__icon">🔭</div>
@@ -69,12 +69,12 @@
             </p>
           </div>
         </div>
-      </div> -->
+      </div>
     </section>
 
     <!-- Values -->
     <section class="section-pad">
-      <!-- <div class="container">
+      <div class="container">
         <div class="text-center" data-aos="fade-up">
           <p class="section-label">Our Foundation</p>
           <h2 class="section-title">Core <em>Values</em></h2>
@@ -87,7 +87,7 @@
             <p>{{ val.desc }}</p>
           </div>
         </div>
-      </div> -->
+      </div>
     </section>
   </main>
 </template>
