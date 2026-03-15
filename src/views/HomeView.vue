@@ -261,7 +261,7 @@ export default {
 .text-center { text-align:center; }
 
 /* ── Hero ── */
-.hero { background:#0B1929; min-height:100svh; display:flex; flex-direction:column; position:relative; overflow-x:hidden; overflow-y:visible; padding-top:54px; }
+.hero { background:#0B1929; min-height:100svh; display:flex; flex-direction:column; position:relative; overflow-x:hidden; overflow-y:hidden; padding-top:54px; }
 @supports not (min-height:100svh) { .hero { min-height:100vh; } }
 .hero__video-wrap { position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero__video { width:100%; height:100%; object-fit:cover; pointer-events:none; }
