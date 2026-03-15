@@ -261,7 +261,7 @@ export default {
 .text-center { text-align:center; }
 
 /* ── Hero ── */
-.hero { background:#0B1929; min-height:100svh; display:flex; flex-direction:column; position:relative; overflow:hidden; padding-top:54px; }
+.hero { background:#0B1929; min-height:100svh; display:flex; flex-direction:column; position:relative; overflow-x:hidden; overflow-y:visible; padding-top:54px; }
 @supports not (min-height:100svh) { .hero { min-height:100vh; } }
 .hero__video-wrap { position:absolute; inset:0; z-index:0; overflow:hidden; }
 .hero__video { width:100%; height:100%; object-fit:cover; pointer-events:none; }
@@ -375,9 +375,9 @@ export default {
   .hero__actions { flex-direction:column; align-items:stretch; }
   .hero__btn { justify-content:center; max-width:64%; }
   .hero__visual { width:100%; align-items:flex-start;}
-  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; scroll-snap-type:x mandatory; scrollbar-width:none;}
+  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-left:2px; scroll-snap-type:x mandatory; touch-action:pan-x; scrollbar-width:none; -ms-overflow-style:none;}
   .hero__card-stack::-webkit-scrollbar { display:none; }
-  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; }
+  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; transform:translateZ(0);}
   .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
   .hero__cards-hint { display:block; }
   .hero__scroll-cue { display:none; }
