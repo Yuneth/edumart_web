@@ -4,11 +4,14 @@
 
       <!-- Logo -->
       <router-link to="/" class="navbar__logo" @click="closeMenu">
-        <img
-          src="https://ik.imagekit.io/kp5tixhur/Edumart/logo"
-          alt="Edumart"
-          class="navbar__logo-img"
-        />
+        <div class="navbar__logo-wrap">
+          <img
+            src="https://ik.imagekit.io/kp5tixhur/Edumart/logo"
+            alt="Edumart"
+            class="navbar__logo-img"
+          />
+          <span class="navbar__logo-sub">Edumart (Pvt) Ltd</span>
+        </div>
       </router-link>
 
       <!-- Desktop Nav -->
@@ -137,25 +140,34 @@ export default {
   flex-shrink: 0;
 }
 
+.navbar__logo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
 .navbar__logo-img {
   height: 36px;
   width: auto;
   object-fit: contain;
   display: block;
   transition: opacity 0.25s ease, transform 0.25s ease;
-  /* White version for dark navbar — use brightness filter */
-  /* filter: brightness(0) invert(1); */
+}
+
+.navbar__logo-sub {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(10, 22, 40, 0.45);
+  line-height: 1.5;
+  padding-left: 2px;
 }
 
 .navbar__logo:hover .navbar__logo-img {
   opacity: 0.85;
   transform: scale(1.02);
 }
-
-/* Once scrolled, restore natural logo colors */
-/* .navbar--scrolled .navbar__logo-img {
-  filter: brightness(0) invert(1);
-} */
 
 /* ─── Nav Links ─── */
 .navbar__links {
