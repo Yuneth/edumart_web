@@ -1,93 +1,65 @@
 <template>
   <main>
-    <!-- ── Hero ── -->
-    <section class="hero">
 
-      <!-- Background Video -->
-      <!--
-        VIDEO SETUP:
-        1. Create folder: public/videos/
-        2. Add files:     public/videos/hero-bg.mp4  (required)
-                          public/videos/hero-bg.webm (optional, for Firefox)
-        Files in /public are served directly and NOT processed by webpack.
-        NEVER use @/assets/ for videos — webpack will error if files are missing.
-      -->
+    <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+    <section class="hero">
       <div class="hero__video-wrap" v-if="videoReady">
-        <video
-          class="hero__video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          @error="videoReady = false"
-        >
-          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4" type="video/webm" />
-          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4"  type="video/mp4"  />
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" @error="videoReady = false">
+          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4" type="video/mp4" />
         </video>
       </div>
-
-      <!-- Dark gradient overlay — keeps text readable over video -->
       <div class="hero__overlay"></div>
-
-      <!-- Subtle gold glow accent (decorative) -->
-      <div class="hero__glow"></div>
+      <div class="hero__noise"></div>
+      <div class="hero__glow hero__glow--a"></div>
+      <div class="hero__glow hero__glow--b"></div>
 
       <div class="container hero__inner">
-        <div class="hero__content" data-aos="fade-right" data-aos-duration="1000">
-          <p class="section-label">Sri Lanka's Trusted Partner</p>
+        <div class="hero__content" data-aos="fade-right" data-aos-duration="900">
+          <div class="hero__eyebrow">
+            <span class="eyebrow-dot"></span>
+            Sri Lanka's Trusted Partner
+          </div>
           <h1 class="hero__title">
             Integrated<br>
             <em>Supply Chain</em><br>
             Solutions
           </h1>
-          <div class="divider-gold"></div>
+          <div class="hero__divider"></div>
           <p class="hero__subtitle">
             Delivering reliable, efficient, and scalable operational services to
             educational institutions and corporate organizations across Sri Lanka.
           </p>
           <div class="hero__actions">
-            <router-link to="/services" class="btn btn-primary">Explore Services</router-link>
-            <router-link to="/about" class="btn btn-outline">Learn More</router-link>
+            <router-link to="/services" class="hero__btn hero__btn--primary">
+              Explore Services
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </router-link>
+            <router-link to="/about" class="hero__btn hero__btn--ghost">Learn More</router-link>
           </div>
         </div>
-        <div class="hero__visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+
+        <div class="hero__visual" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
           <div class="hero__card-stack">
-            <div class="hcard hcard--1">
-              <span class="hcard__icon">📦</span>
-              <span>Procurement &amp; Purchasing</span>
-            </div>
-            <div class="hcard hcard--2">
-              <span class="hcard__icon">🚚</span>
-              <span>Logistics &amp; Transportation</span>
-            </div>
-            <div class="hcard hcard--3">
-              <span class="hcard__icon">🏭</span>
-              <span>Warehousing &amp; Inventory</span>
-            </div>
-            <div class="hcard hcard--4">
-              <span class="hcard__icon">📊</span>
-              <span>Supply Chain Consultation</span>
+            <div v-for="(card, i) in heroCards" :key="card.label" class="hcard" :class="`hcard--${i+1}`">
+              <div class="hcard__icon-wrap">
+                <svg :viewBox="card.vb" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="card.svg"></svg>
+              </div>
+              <span class="hcard__label">{{ card.label }}</span>
             </div>
           </div>
-          <!-- Scroll hint — only shows on mobile -->
-          <div class="cards-scroll-hint">
-            <span>swipe</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </div>
+          <div class="hero__cards-hint">swipe to explore →</div>
         </div>
       </div>
 
-      <!-- Scroll indicator -->
-      <div class="hero__scroll">
-        <div class="scroll-line"></div>
+      <div class="hero__scroll-cue">
+        <div class="scroll-pill"><div class="scroll-dot"></div></div>
         <span>Scroll</span>
       </div>
     </section>
 
-    <!-- ── Stats Band ── -->
+    <!-- ══════════════════════════════ STATS ══════════════════════════════ -->
     <section class="stats-band">
-      <div class="container stats-band__grid">
+      <div class="container stats-band__inner">
         <div v-for="stat in stats" :key="stat.label" class="stat-item" data-aos="fade-up">
           <span class="stat-num">{{ stat.num }}</span>
           <span class="stat-label">{{ stat.label }}</span>
@@ -95,137 +67,129 @@
       </div>
     </section>
 
-    <!-- ── About Snippet ── -->
+    <!-- ══════════════════════════════ ABOUT SNIPPET ══════════════════════════════ -->
     <section class="section-pad about-snippet">
       <div class="container about-snippet__inner">
         <div class="about-snippet__text" data-aos="fade-right">
-          <p class="section-label">Who We Are</p>
-          <h2 class="section-title">
-            Managing Operations.<br>
-            <em>Enabling Growth.</em>
-          </h2>
-          <div class="divider-gold"></div>
-          <p>
+          <p class="section-eyebrow">Who We Are</p>
+          <h2 class="section-heading">Managing Operations.<br><em>Enabling Growth.</em></h2>
+          <div class="section-rule"></div>
+          <p class="body-text">
             Edumart (Pvt) Ltd was established to provide integrated supply chain and
             operational management services with a focus on reliability, cost efficiency,
             and strategic expansion across Sri Lanka.
           </p>
-          <p style="margin-top:1rem;">
+          <p class="body-text" style="margin-top:1rem;">
             We specialize in procurement, logistics, warehousing, cargo transportation,
             and supply chain consultancy delivering structured end-to-end operational
             support tailored to institutional requirements.
           </p>
-          <router-link to="/about" class="btn btn-dark" style="margin-top:2rem;">
-            About Edumart
+          <router-link to="/about" class="text-link" style="margin-top:2rem; display:inline-flex;">
+            Discover Our Story
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </router-link>
         </div>
         <div class="about-snippet__pillars" data-aos="fade-left" data-aos-delay="150">
           <div v-for="pillar in pillars" :key="pillar.title" class="pillar-card">
-            <span class="pillar-icon">{{ pillar.icon }}</span>
-            <div>
-              <h4>{{ pillar.title }}</h4>
-              <p>{{ pillar.desc }}</p>
+            <div class="pillar-card__header">
+              <div class="pillar-icon-ring">
+                <svg :viewBox="pillar.vb" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="pillar.svg"></svg>
+              </div>
+              <h4 class="pillar-title">{{ pillar.title }}</h4>
             </div>
+            <p class="pillar-desc">{{ pillar.desc }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Services ── -->
-    <section class="section-pad bg-ivory services-preview">
-      <div class="container">
+    <!-- ══════════════════════════════ SERVICES ══════════════════════════════ -->
+    <section class="section-pad services-section">
+      <div class="services-section__bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
         <div class="text-center" data-aos="fade-up">
-          <p class="section-label">What We Offer</p>
-          <h2 class="section-title">Our Core <em>Services</em></h2>
-          <div class="divider-gold centered"></div>
+          <p class="section-eyebrow">What We Offer</p>
+          <h2 class="section-heading">Our Core <em>Services</em></h2>
+          <div class="section-rule centered"></div>
         </div>
         <div class="services-grid">
-          <div
-            v-for="(service, i) in services"
-            :key="service.title"
-            class="card service-card"
-            :data-aos="'fade-up'"
-            :data-aos-delay="i * 80"
-          >
-            <div class="service-card__icon">{{ service.icon }}</div>
+          <div v-for="(service, i) in services" :key="service.title" class="service-card" :data-aos="'fade-up'" :data-aos-delay="i*70">
+            <div class="service-card__icon-wrap">
+              <svg :viewBox="service.vb" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="service.svg"></svg>
+            </div>
             <h3 class="service-card__title">{{ service.title }}</h3>
             <p class="service-card__desc">{{ service.desc }}</p>
             <router-link to="/services" class="service-card__link">
-              Learn more <span>→</span>
+              Learn more
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </router-link>
           </div>
         </div>
-        <div class="text-center" style="margin-top:3rem;" data-aos="fade-up">
-          <router-link to="/services" class="btn btn-dark">View All Services</router-link>
+        <div class="text-center" style="margin-top:3.5rem;" data-aos="fade-up">
+          <router-link to="/services" class="outline-btn">View All Services</router-link>
         </div>
       </div>
     </section>
 
-    <!-- ── Why Choose Us ── -->
-    <section class="section-pad why-us bg-navy">
-      <div class="container">
-        <div class="text-center" data-aos="fade-up">
-          <p class="section-label" style="color:var(--gold)">Our Advantage</p>
-          <h2 class="section-title" style="color:var(--white)">Why Choose <em style="color:var(--gold)">Edumart?</em></h2>
-          <div class="divider-gold centered"></div>
-        </div>
-        <div class="why-grid">
-          <div
-            v-for="(item, i) in whyUs"
-            :key="item.title"
-            class="why-card"
-            :data-aos="'fade-up'"
-            :data-aos-delay="i * 60"
-          >
-            <div class="why-card__check">✔</div>
-            <div>
-              <h4 style="color:var(--white); margin-bottom:0.4rem;">{{ item.title }}</h4>
-              <p style="color:rgba(255,255,255,0.55); font-size:0.875rem;">{{ item.desc }}</p>
+    <!-- ══════════════════════════════ WHY US ══════════════════════════════ -->
+    <section class="section-pad why-section">
+      <div class="why-section__bg"></div>
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="why-section__layout">
+          <div class="why-section__left" data-aos="fade-right">
+            <p class="section-eyebrow light">Our Advantage</p>
+            <h2 class="section-heading light">Why Choose<br><em>Edumart?</em></h2>
+            <div class="section-rule"></div>
+            <p class="body-text light">
+              We combine professional expertise with genuine dedication to deliver
+              supply chain solutions that drive real, measurable results.
+            </p>
+            <router-link to="/about" class="ghost-btn" style="margin-top:2rem;">About Us →</router-link>
+          </div>
+          <div class="why-section__grid" data-aos="fade-left" data-aos-delay="100">
+            <div v-for="(item, i) in whyUs" :key="item.title" class="why-card" :data-aos="'fade-up'" :data-aos-delay="i*55">
+              <div class="why-card__tick">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 class="why-card__title">{{ item.title }}</h4>
+                <p class="why-card__desc">{{ item.desc }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Clients ── -->
+    <!-- ══════════════════════════════ CLIENTS ══════════════════════════════ -->
     <section class="section-pad clients-section">
       <div class="container">
         <div class="text-center" data-aos="fade-up">
-          <p class="section-label">Our Partners</p>
-          <h2 class="section-title">Trusted by Leading <em>Institutions</em></h2>
-          <div class="divider-gold centered"></div>
-          <p style="max-width:540px; margin:0 auto 3rem; color:var(--text-muted);">
+          <p class="section-eyebrow">Our Partners</p>
+          <h2 class="section-heading">Trusted by Leading <em>Institutions</em></h2>
+          <div class="section-rule centered"></div>
+          <p class="intro-text">
             We proudly serve leading educational institutions, building long-term
             partnerships founded on trust, reliability, and performance excellence.
           </p>
         </div>
         <div class="clients-grid">
           <div v-for="client in clients" :key="client" class="client-card" data-aos="zoom-in">
-            <div class="client-card__icon">🎓</div>
+            <div class="client-card__emblem">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
             <p class="client-card__name">{{ client }}</p>
           </div>
         </div>
         <div class="text-center" style="margin-top:3rem;" data-aos="fade-up">
-          <router-link to="/clients" class="btn btn-dark">View All Clients</router-link>
+          <router-link to="/clients" class="outline-btn">View All Clients</router-link>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA Banner ── -->
-    <section class="cta-banner">
-      <div class="container cta-banner__inner" data-aos="fade-up">
-        <div>
-          <h2 style="color:var(--white); font-weight:300;">
-            Ready to streamline your<br>
-            <em style="color:var(--gold); font-style:italic;">operations?</em>
-          </h2>
-        </div>
-        <div class="cta-banner__actions">
-          <router-link to="/contact" class="btn btn-primary">Get In Touch</router-link>
-          <router-link to="/services" class="btn btn-outline">Our Services</router-link>
-        </div>
-      </div>
-    </section>
   </main>
 </template>
 
@@ -234,33 +198,37 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      // videoReady: set to false if you have not added video files yet,
-      // or leave true and add files to public/videos/
       videoReady: true,
+      heroCards: [
+        { label: 'Procurement & Purchasing', vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
+        { label: 'Logistics & Transportation', vb: '0 0 24 24', svg: '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
+        { label: 'Warehousing & Inventory', vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+        { label: 'Supply Chain Consultation', vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+      ],
       stats: [
-        { num: '5+',    label: 'Core Services' },
-        { num: '3+',    label: 'Institutional Clients' },
-        { num: '100%',  label: 'Transparency' },
-        { num: '∞',     label: 'Growth Potential' },
+        { num: '5+',   label: 'Core Services' },
+        { num: '3+',   label: 'Institutional Clients' },
+        { num: '100%', label: 'Transparency' },
+        { num: '2+',   label: 'Years Operating' },
       ],
       pillars: [
-        { icon: '🎯', title: 'Vision', desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.' },
-        { icon: '🚀', title: 'Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.' },
+        { title: 'Our Vision', desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 7V2"/><path d="m15 9 5-5"/>' },
+        { title: 'Our Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
       ],
       services: [
-        { icon: '📦', title: 'Procurement & Purchasing', desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.' },
-        { icon: '🚚', title: 'Logistics Handling', desc: 'Local and international logistics coordination, import/export documentation, and route optimization.' },
-        { icon: '🏭', title: 'Warehousing & Inventory', desc: 'Secure storage, inventory control systems, stock monitoring, and distribution coordination.' },
-        { icon: '🚛', title: 'Cargo Transportation', desc: 'Inland cargo transportation, institutional material distribution, and scheduled/urgent deliveries.' },
-        { icon: '📊', title: 'Supply Chain Consultation', desc: 'Process optimization, procurement strategy development, cost control, and operational structuring.' },
+        { title: 'Procurement & Purchasing', desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.', vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
+        { title: 'Logistics Handling', desc: 'Local and international logistics coordination, import/export documentation, and route optimization.', vb: '0 0 24 24', svg: '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
+        { title: 'Warehousing & Inventory', desc: 'Secure storage, inventory control systems, stock monitoring, and distribution coordination.', vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+        { title: 'Cargo Transportation', desc: 'Inland cargo transportation, institutional material distribution, and scheduled/urgent deliveries.', vb: '0 0 24 24', svg: '<path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>' },
+        { title: 'Supply Chain Consultation', desc: 'Process optimization, procurement strategy development, cost control, and operational structuring.', vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
       ],
       whyUs: [
-        { title: 'Professional & Structured Systems',   desc: 'Methodically designed operational workflows built for institutional efficiency.' },
-        { title: 'Dedicated Service Management',        desc: 'Hands-on account management and dedicated support for every client.' },
-        { title: 'Strong Supplier Networks',            desc: 'Established relationships with reliable suppliers and logistics partners.' },
-        { title: 'Transparent Procurement',             desc: 'Full visibility into purchasing decisions, costs, and supply chain activities.' },
-        { title: 'Scalable Solutions',                  desc: 'Flexible systems designed to grow alongside your expanding institution.' },
-        { title: 'Long-Term Growth Strategy',           desc: 'Partnerships focused on your success for years to come.' },
+        { title: 'Professional & Structured Systems',  desc: 'Methodically designed operational workflows built for institutional efficiency.' },
+        { title: 'Dedicated Service Management',       desc: 'Hands-on account management and dedicated support for every client.' },
+        { title: 'Strong Supplier Networks',           desc: 'Established relationships with reliable suppliers and logistics partners.' },
+        { title: 'Transparent Procurement',            desc: 'Full visibility into purchasing decisions, costs, and supply chain activities.' },
+        { title: 'Scalable Solutions',                 desc: 'Flexible systems designed to grow alongside your expanding institution.' },
+        { title: 'Long-Term Growth Strategy',          desc: 'Partnerships focused on your success for years to come.' },
       ],
       clients: [
         'Cambridge College of British English International (PVT) Ltd',
@@ -273,544 +241,166 @@ export default {
 </script>
 
 <style scoped>
-/* ═══════════════════════════════
-   HERO
-═══════════════════════════════ */
-.hero {
-  background: var(--navy);
-  min-height: 100svh;          /* svh = small viewport height — fixes mobile browser chrome */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  padding-top: 80px;           /* navbar height */
-}
-/* Allow hero to shrink naturally if content is taller than viewport */
-@supports not (min-height: 100svh) {
-  .hero { min-height: 100vh; }
-}
+/* ── Shared Tokens ── */
+.section-eyebrow { font-size:.62rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#2DB89A; margin-bottom:.8rem; display:block; }
+.section-eyebrow.light { color:rgba(45,184,154,.85); }
+.section-heading { font-family:var(--font-display,'Playfair Display',Georgia,serif); font-size:clamp(2rem,4vw,3rem); font-weight:300; color:#0A1628; line-height:1.12; margin-bottom:1.2rem; }
+.section-heading em { font-style:italic; color:#2DB89A; }
+.section-heading.light { color:#fff; }
+.section-rule { width:40px; height:2px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); margin-bottom:1.6rem; border-radius:2px; }
+.section-rule.centered { margin:0 auto 2.5rem; }
+.body-text { font-size:.95rem; color:rgba(10,22,40,.65); line-height:1.85; }
+.body-text.light { color:rgba(255,255,255,.6); }
+.text-link { display:inline-flex; align-items:center; gap:.5rem; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#2DB89A; text-decoration:none; transition:gap .2s; }
+.text-link:hover { gap:.75rem; }
+.intro-text { max-width:520px; margin:0 auto 3rem; font-size:.95rem; color:rgba(10,22,40,.55); line-height:1.8; }
+.outline-btn { display:inline-flex; align-items:center; padding:.75rem 1.8rem; border:1.5px solid rgba(10,22,40,.2); border-radius:8px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#0A1628; text-decoration:none; transition:all .25s ease; }
+.outline-btn:hover { border-color:#2DB89A; color:#2DB89A; background:rgba(45,184,154,.05); }
+.ghost-btn { display:inline-flex; align-items:center; padding:.7rem 1.6rem; border:1.5px solid rgba(255,255,255,.25); border-radius:8px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.75); text-decoration:none; transition:all .25s ease; }
+.ghost-btn:hover { border-color:rgba(45,184,154,.6); color:#2DB89A; }
+.text-center { text-align:center; }
 
-/* ── Video Background ── */
-.hero__video-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.hero__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  /* filter: saturate(0.65) brightness(0.5); */
-  pointer-events: none;
-  /* Fallback: fill whole area on any screen ratio */
-  min-width: 100%;
-  min-height: 100%;
-}
+/* ── Hero ── */
+.hero { background:#0B1929; min-height:100svh; display:flex; flex-direction:column; position:relative; overflow:hidden; padding-top:54px; }
+@supports not (min-height:100svh) { .hero { min-height:100vh; } }
+.hero__video-wrap { position:absolute; inset:0; z-index:0; overflow:hidden; }
+.hero__video { width:100%; height:100%; object-fit:cover; pointer-events:none; }
+.hero__overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(160deg,rgba(7,16,30,.92) 0%,rgba(7,16,30,.68) 50%,rgba(10,22,40,.78) 100%); }
+.hero__noise { position:absolute; inset:0; z-index:2; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); background-size:200px 200px; pointer-events:none; opacity:.4; }
+.hero__glow { position:absolute; z-index:2; pointer-events:none; border-radius:50%; }
+.hero__glow--a { bottom:-10%; left:-5%; width:600px; height:500px; background:radial-gradient(ellipse,rgba(45,184,154,.09) 0%,transparent 65%); }
+.hero__glow--b { top:-20%; right:-10%; width:700px; height:600px; background:radial-gradient(ellipse,rgba(26,52,89,.4) 0%,transparent 60%); }
+.hero__inner { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:4rem; flex:1; padding-top:3.5rem; padding-bottom:3.5rem; position:relative; z-index:3; }
+.hero__eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(45,184,154,.9); margin-bottom:1.1rem; }
+.eyebrow-dot { width:5px; height:5px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); border-radius:50%; }
+.hero__title { font-family:var(--font-display,'Playfair Display',Georgia,serif); font-size:clamp(2.8rem,5.5vw,5rem); font-weight:300; color:#fff; line-height:1.06; margin-bottom:1.3rem; letter-spacing:-.01em; }
+.hero__title em { font-style:italic; color:#2DB89A; }
+.hero__divider { width:48px; height:1.5px; background:linear-gradient(90deg,#2DB89A,transparent); margin-bottom:1.4rem; }
+.hero__subtitle { font-size:clamp(.9rem,1.8vw,1rem); color:rgba(255,255,255,.6); line-height:1.85; max-width:460px; margin-bottom:2.5rem; }
+.hero__actions { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+.hero__btn { display:inline-flex; align-items:center; gap:.55rem; padding:.8rem 1.6rem; border-radius:8px; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; transition:all .25s ease; }
+.hero__btn--primary { background:linear-gradient(90deg,#1B6FBF,#2DB89A); color:#0B1929; border:2px solid #2DB89A; }
+.hero__btn--primary:hover { background:#229D83; border-color:#229D83; transform:translateY(-2px); box-shadow:0 8px 28px rgba(45,184,154,.35); }
+.hero__btn--primary:hover svg { transform:translateX(3px); }
+.hero__btn--primary svg { transition:transform .2s; }
+.hero__btn--ghost { background:transparent; color:rgba(255,255,255,.75); border:1.5px solid rgba(255,255,255,.22); }
+.hero__btn--ghost:hover { border-color:rgba(255,255,255,.5); color:#fff; background:rgba(255,255,255,.05); }
+.hero__visual { display:flex; flex-direction:column; gap:.6rem; align-items:center; }
+.hero__card-stack { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; width:100%; max-width:380px; }
+.hcard { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:1.4rem 1.1rem 1.1rem; display:flex; flex-direction:column; gap:.7rem; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); transition:all .3s ease; }
+.hcard:hover { background:rgba(45,184,154,.08); border-color:rgba(45,184,154,.3); transform:translateY(-4px); }
+.hcard__icon-wrap { width:36px; height:36px; background:rgba(255,255,255,.06); border-radius:8px; display:grid; place-items:center; color:#2DB89A; }
+.hcard__label { font-size:.72rem; font-weight:600; color:rgba(255,255,255,.72); line-height:1.35; letter-spacing:.01em; }
+.hcard--1 { animation:floatCard 5s ease-in-out infinite 0s; }
+.hcard--2 { animation:floatCard 5s ease-in-out infinite 1.2s; }
+.hcard--3 { animation:floatCard 5s ease-in-out infinite .6s; }
+.hcard--4 { animation:floatCard 5s ease-in-out infinite 1.8s; }
+@keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.hero__cards-hint { display:none; font-size:.6rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); align-self:flex-start; padding-left:2px; }
+.hero__scroll-cue { position:relative; z-index:3; display:flex; flex-direction:column; align-items:center; gap:.5rem; padding-bottom:2.5rem; color:rgba(255,255,255,.3); font-size:.6rem; letter-spacing:.18em; text-transform:uppercase; }
+.scroll-pill { width:22px; height:36px; border:1.5px solid rgba(255,255,255,.18); border-radius:12px; display:flex; justify-content:center; padding-top:6px; }
+.scroll-dot { width:3px; height:8px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); border-radius:2px; animation:scrollBounce 2s ease-in-out infinite; }
+@keyframes scrollBounce { 0%,100%{opacity:.4;transform:translateY(0)} 50%{opacity:1;transform:translateY(6px)} }
 
-/* ── Overlay — text contrast ── */
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      150deg,
-      rgba(10, 22, 40, 0.88) 0%,
-      rgba(10, 22, 40, 0.62) 55%,
-      rgba(17, 34, 64, 0.72) 100%
-    );
-  pointer-events: none;
-}
+/* ── Stats Band ── */
+.stats-band { background:linear-gradient(90deg,#1B6FBF,#2DB89A); padding:0; position:relative; z-index:4; }
+.stats-band__inner { display:grid; grid-template-columns:repeat(4,1fr); }
+.stat-item { display:flex; flex-direction:column; align-items:center; padding:2.2rem 1rem; gap:.25rem; border-right:1px solid rgba(10,22,40,.12); }
+.stat-item:last-child { border-right:none; }
+.stat-num { font-family:var(--font-display,'Playfair Display',Georgia,serif); font-size:clamp(2.2rem,4vw,3rem); font-weight:600; color:#0B1929; line-height:1; letter-spacing:-.01em; }
+.stat-label { font-size:.63rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:rgba(10,22,40,.55); }
 
-/* ── Gold glow accent ── */
-.hero__glow {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background:
-    radial-gradient(ellipse at 12% 85%, rgba(201,168,76,0.12) 0%, transparent 45%),
-    radial-gradient(ellipse at 88% 12%, rgba(26, 52, 89, 0.45) 0%, transparent 50%);
-  pointer-events: none;
-}
+/* ── About Snippet ── */
+.about-snippet { background:#fff; }
+.about-snippet__inner { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.pillar-card { padding:1.8rem; border:1px solid rgba(10,22,40,.08); border-radius:14px; background:#FAFAF8; transition:all .3s ease; margin-bottom:1rem; }
+.pillar-card:last-child { margin-bottom:0; }
+.pillar-card:hover { border-color:rgba(45,184,154,.35); background:#fff; transform:translateX(6px); box-shadow:0 8px 30px rgba(45,184,154,.1); }
+.pillar-card__header { display:flex; align-items:center; gap:1rem; margin-bottom:.8rem; }
+.pillar-icon-ring { width:40px; height:40px; border-radius:10px; background:rgba(45,184,154,.1); border:1px solid rgba(45,184,154,.2); display:grid; place-items:center; color:#2DB89A; flex-shrink:0; }
+.pillar-title { font-size:1rem; font-weight:700; color:#0B1929; }
+.pillar-desc { font-size:.875rem; color:rgba(10,22,40,.55); line-height:1.75; }
 
-/* ── Content layer ── */
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  align-items: center;
-  gap: 4rem;
-  flex: 1;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  position: relative;
-  z-index: 3;
-}
+/* ── Services ── */
+.services-section { position:relative; overflow:hidden; }
+.services-section__bg { position:absolute; inset:0; background:#F4F6F9; z-index:0; }
+.services-section__bg::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(45,184,154,.3),transparent); }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.services-grid > *:last-child:nth-child(3n+1) { grid-column:2; }
+.service-card { background:#fff; border:1px solid rgba(10,22,40,.07); border-radius:16px; padding:2.2rem 1.8rem; transition:all .3s ease; position:relative; overflow:hidden; }
+.service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
+.service-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(10,22,40,.08); border-color:rgba(45,184,154,.2); }
+.service-card:hover::before { transform:scaleX(1); }
+.service-card__icon-wrap { width:48px; height:48px; background:rgba(45,184,154,.08); border-radius:12px; display:grid; place-items:center; margin-bottom:1.2rem; color:#2DB89A; border:1px solid rgba(45,184,154,.15); }
+.service-card__title { font-size:1rem; font-weight:700; color:#0B1929; margin-bottom:.7rem; line-height:1.3; }
+.service-card__desc { font-size:.855rem; color:rgba(10,22,40,.55); line-height:1.78; margin-bottom:1.5rem; }
+.service-card__link { display:inline-flex; align-items:center; gap:.4rem; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#2DB89A; text-decoration:none; transition:gap .2s; }
+.service-card__link:hover { gap:.65rem; }
 
-.hero__content { max-width: 600px; }
+/* ── Why Section ── */
+.why-section { position:relative; overflow:hidden; }
+.why-section__bg { position:absolute; inset:0; background:linear-gradient(135deg,#0F2236 0%,#0B1929 50%,#081523 100%); z-index:0; }
+.why-section__bg::before { content:''; position:absolute; top:50%; left:-200px; transform:translateY(-50%); width:500px; height:500px; border-radius:50%; background:radial-gradient(ellipse,rgba(45,184,154,.06) 0%,transparent 65%); }
+.why-section__layout { display:grid; grid-template-columns:1fr 1.4fr; gap:5rem; align-items:start; position:relative; z-index:1; }
+.why-section__grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.why-card { display:flex; gap:.85rem; align-items:flex-start; padding:1.3rem; border:1px solid rgba(255,255,255,.06); border-radius:12px; background:rgba(255,255,255,.025); transition:all .25s ease; }
+.why-card:hover { background:rgba(45,184,154,.06); border-color:rgba(45,184,154,.18); }
+.why-card__tick { width:26px; height:26px; background:rgba(45,184,154,.15); border:1px solid rgba(45,184,154,.3); border-radius:50%; display:grid; place-items:center; color:#2DB89A; flex-shrink:0; margin-top:.05rem; }
+.why-card__title { font-size:.88rem; font-weight:700; color:#fff; margin-bottom:.35rem; line-height:1.3; }
+.why-card__desc { font-size:.8rem; color:rgba(255,255,255,.45); line-height:1.65; }
 
-.hero__title {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 5.2rem);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.08;
-  margin-bottom: 1.4rem;
-}
-.hero__title em {
-  font-style: italic;
-  color: var(--gold);
-}
+/* ── Clients ── */
+.clients-section { background:#fff; }
+.clients-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.client-card { padding:2.5rem 2rem; border:1px solid rgba(10,22,40,.08); border-radius:16px; background:#F8F9FB; text-align:center; transition:all .3s ease; }
+.client-card:hover { border-color:rgba(45,184,154,.4); background:#fff; transform:translateY(-6px); box-shadow:0 16px 40px rgba(27,111,191,.12); }
+.client-card__emblem { width:52px; height:52px; background:rgba(45,184,154,.08); border:1px solid rgba(45,184,154,.18); border-radius:12px; display:grid; place-items:center; margin:0 auto 1.2rem; color:#2DB89A; transition:background .2s; }
+.client-card:hover .client-card__emblem { background:rgba(45,184,154,.15); }
+.client-card__name { font-size:.9rem; font-weight:600; color:#0B1929; line-height:1.55; }
 
-.hero__subtitle {
-  color: rgba(255,255,255,0.68);
-  font-size: clamp(0.92rem, 2vw, 1.05rem);
-  line-height: 1.8;
-  max-width: 500px;
-  margin-bottom: 2.2rem;
+/* ── Responsive ── */
+@media (max-width:1024px) {
+  .hero__inner { gap:2.5rem; }
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+  .services-grid > *:last-child:nth-child(3n+1) { grid-column:auto; }
+  .why-section__layout { gap:3rem; }
+  .clients-grid { grid-template-columns:repeat(2,1fr); }
+  .about-snippet__inner { gap:3rem; }
 }
-
-.hero__actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
+@media (max-width:768px) {
+  .hero { padding-top:54px; }
+  .hero__inner { grid-template-columns:1fr; gap:2.5rem; padding-top:2rem; padding-bottom:2rem; }
+  .hero__title { font-size:clamp(2.2rem,9vw,3rem); }
+  .hero__subtitle { font-size:.92rem; max-width:70%; }
+  .hero__actions { flex-direction:column; align-items:stretch; }
+  .hero__btn { justify-content:center; max-width:64%; }
+  .hero__visual { width:100%; align-items:flex-start; }
+  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-right:2rem; scrollbar-width:none; -ms-overflow-style:none; }
+  .hero__card-stack::-webkit-scrollbar { display:none; }
+  .hcard { flex:0 0 auto; width:140px; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
+  .hero__cards-hint { display:block; }
+  .hero__scroll-cue { display:none; }
+  .stats-band__inner { grid-template-columns:repeat(2,1fr); }
+  .stat-item { border-right:none; border-bottom:1px solid rgba(10,22,40,.1); padding:1.6rem 1rem; }
+  .stat-item:nth-child(odd) { border-right:1px solid rgba(10,22,40,.12); }
+  .stat-item:nth-last-child(-n+2) { border-bottom:none; }
+  .about-snippet__inner { grid-template-columns:1fr; gap:2.5rem; }
+  .services-grid { grid-template-columns:1fr; margin-top:2rem; }
+  .services-grid > *:last-child:nth-child(3n+1) { grid-column:auto; }
+  .why-section__layout { grid-template-columns:1fr; gap:2.5rem; }
+  .why-section__grid { grid-template-columns:1fr; }
+  .clients-grid { grid-template-columns:1fr; gap:1.2rem; }
 }
-
-/* ── Floating service cards ── */
-.hero__visual {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.75rem;
+@media (max-width:480px) {
+  .hcard { width:125px; }
+  .services-grid { gap:1rem; }
+  .service-card { padding:1.6rem 1.4rem; }
+  .client-card { padding:1.8rem 1.4rem; }
 }
-
-/* Swipe hint — hidden on desktop */
-.cards-scroll-hint {
-  display: none;
-}
-.hero__card-stack {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
-}
-.hcard {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-md);
-  padding: 1.4rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.78);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: all var(--transition);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-.hcard:hover {
-  background: rgba(201,168,76,0.12);
-  border-color: rgba(201,168,76,0.35);
-  color: var(--gold-light);
-}
-.hcard__icon { font-size: 1.7rem; }
-.hcard--1 { animation: cardFloat 5s ease-in-out infinite 0s; }
-.hcard--2 { animation: cardFloat 5s ease-in-out infinite 1.25s; }
-.hcard--3 { animation: cardFloat 5s ease-in-out infinite 0.65s; }
-.hcard--4 { animation: cardFloat 5s ease-in-out infinite 1.85s; }
-
-@keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-9px); }
-}
-
-/* ── Scroll indicator ── */
-.hero__scroll {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  padding-bottom: 2rem;
-  color: rgba(255,255,255,0.38);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 3;
-  user-select: none;
-}
-.scroll-line {
-  width: 1px;
-  height: 44px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.35; }
-  50%       { opacity: 1; }
-}
-
-/* ═══════════════════════════════
-   STATS BAND
-═══════════════════════════════ */
-.stats-band {
-  background: var(--gold);
-  padding: 2.5rem 0;
-  position: relative;
-  z-index: 4;
-}
-.stats-band__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  text-align: center;
-}
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
-}
-.stat-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(10,22,40,0.65);
-}
-
-/* ═══════════════════════════════
-   ABOUT SNIPPET
-═══════════════════════════════ */
-.about-snippet__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-.pillar-card {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
-  padding: 1.5rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--ivory-dark);
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  margin-bottom: 1rem;
-  transition: all var(--transition);
-}
-.pillar-card:hover {
-  border-color: var(--gold-pale);
-  transform: translateX(5px);
-  box-shadow: var(--shadow-md);
-}
-.pillar-icon  { font-size: 2rem; flex-shrink: 0; }
-.pillar-card h4 { color: var(--navy); margin-bottom: 0.3rem; font-size: 1rem; }
-.pillar-card p  { font-size: 0.875rem; color: var(--text-muted); }
-
-/* ═══════════════════════════════
-   SERVICES GRID
-═══════════════════════════════ */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-/* 5th card centred when 3-col layout has a lonely card */
-.services-grid > *:last-child:nth-child(3n+1) {
-  grid-column: 1 / -1;
-  max-width: calc(33.33% - 0.75rem);
-  margin: 0 auto;
-}
-.service-card { padding: 2rem; }
-.service-card__icon  { font-size: 2.2rem; margin-bottom: 1rem; }
-.service-card__title { font-size: 1.05rem; margin-bottom: 0.75rem; color: var(--navy); }
-.service-card__desc  { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
-.service-card__link {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: gap var(--transition-fast);
-}
-.service-card__link:hover { gap: 0.75rem; }
-
-/* ═══════════════════════════════
-   WHY CHOOSE US
-═══════════════════════════════ */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
-.why-card {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1.4rem;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.03);
-  transition: all var(--transition);
-}
-.why-card:hover {
-  background: rgba(201,168,76,0.06);
-  border-color: rgba(201,168,76,0.22);
-}
-.why-card__check {
-  width: 30px;
-  height: 30px;
-  background: var(--gold);
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-/* ═══════════════════════════════
-   CLIENTS
-═══════════════════════════════ */
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-.client-card {
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--ivory-dark);
-  background: var(--white);
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition);
-}
-.client-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(201,168,76,0.15);
-}
-.client-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.client-card__name { font-size: 0.92rem; font-weight: 500; color: var(--navy); line-height: 1.55; }
-
-/* ═══════════════════════════════
-   CTA BANNER
-═══════════════════════════════ */
-.cta-banner {
-  background: linear-gradient(135deg, var(--navy-light), var(--navy));
-  padding: 5rem 0;
-  border-top: 1px solid rgba(201,168,76,0.2);
-}
-.cta-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-.cta-banner__actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* ═══════════════════════════════
-   RESPONSIVE — TABLET  ≤ 1024px
-═══════════════════════════════ */
-@media (max-width: 1024px) {
-  .hero__inner          { gap: 3rem; }
-  .services-grid        { grid-template-columns: repeat(2, 1fr); }
-  /* Reset 5th-card centering on 2-col */
-  .services-grid > *:last-child:nth-child(3n+1) {
-    grid-column: auto;
-    max-width: 100%;
-    margin: 0;
-  }
-  .why-grid             { grid-template-columns: repeat(2, 1fr); }
-  .clients-grid         { grid-template-columns: repeat(2, 1fr); }
-  .about-snippet__inner { gap: 3rem; }
-  .stats-band__grid     { gap: 1rem; }
-}
-
-/* ═══════════════════════════════
-   RESPONSIVE — MOBILE  ≤ 768px
-═══════════════════════════════ */
-@media (max-width: 768px) {
-  /* Hero */
-  .hero                  { padding-top: 70px; min-height: 100svh; }
-  .hero__inner           {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    align-items: flex-start;
-  }
-  /* Cards shown below text on mobile */
-  .hero__visual          {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  /* Swipe hint visible on mobile */
-  .cards-scroll-hint     {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    padding-left: 0.25rem;
-  }
-  .cards-scroll-hint svg { opacity: 0.5; }
-  .hero__card-stack      {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.75rem;
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 0.75rem;
-    /* Breathing room so last card is not clipped at scroll end */
-    padding-right: 1.5rem;
-    /* Hide scrollbar visually but keep it functional */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .hero__card-stack::-webkit-scrollbar { display: none; }
-  .hcard                 {
-    flex: 0 0 auto;
-    width: 140px;
-    min-height: 115px;
-    padding: 1rem;
-    font-size: 0.76rem;
-    line-height: 1.35;
-  }
-  .hcard__icon           { font-size: 1.5rem; }
-  /* Disable float animation on mobile — saves battery */
-  .hcard--1, .hcard--2,
-  .hcard--3, .hcard--4   { animation: none; }
-  /* Remove expensive backdrop-filter on mobile */
-  .hcard                 { backdrop-filter: none; -webkit-backdrop-filter: none; }
-  .hero__content         { max-width: 100%; }
-  .hero__title           { font-size: clamp(2.1rem, 10vw, 2.8rem); margin-bottom: 1rem; }
-  .hero__subtitle        { font-size: 0.93rem; margin-bottom: 1.8rem; max-width: 95%; }
-  .hero__actions         { flex-direction: column; align-items: stretch; gap: 0.75rem; }
-  .hero__actions .btn    { width: 90%; justify-content: center; padding: 0.95rem 2rem; }
-  /* Ensure button colors are not overridden on mobile */
-  .hero__actions .btn-primary  { background: var(--gold); color: var(--navy) !important; font-weight: 600; }
-  .hero__actions .btn-outline  { background: transparent; color: var(--white) !important; border: 1.5px solid rgba(255,255,255,0.55); }
-  .hero__scroll          { display: none; }
-  .hero__overlay         { background: rgba(10, 22, 40, 0.82); }
-
-  /* Stats */
-  .stats-band            { padding: 1.8rem 0; }
-  .stats-band__grid      { grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1rem; }
-  .stat-num              { font-size: 2.1rem; }
-  .stat-label            { font-size: 0.68rem; }
-
-  /* About */
-  .about-snippet__inner  { grid-template-columns: 1fr; gap: 2.5rem; }
-
-  /* Services */
-  .services-grid         { grid-template-columns: 1fr; margin-top: 2rem; }
-  .services-grid > *:last-child:nth-child(3n+1) { grid-column: auto; max-width: 100%; margin: 0; }
-
-  /* Why */
-  .why-grid              { grid-template-columns: 1fr; margin-top: 2rem; }
-
-  /* Clients */
-  .clients-grid          { grid-template-columns: 1fr; gap: 1.25rem; }
-
-  /* CTA */
-  .cta-banner            { padding: 3rem 0; }
-  .cta-banner__inner     { flex-direction: column; text-align: center; gap: 2rem; justify-content: center; }
-  .cta-banner__actions   { justify-content: center; width: 100%; }
-  .cta-banner__actions .btn { flex: 1; min-width: 130px; justify-content: center; }
-}
-
-/* ═══════════════════════════════
-   RESPONSIVE — SMALL  ≤ 480px
-═══════════════════════════════ */
-@media (max-width: 480px) {
-  .hero                  { padding-top: 64px; }
-  .hero__title           { font-size: clamp(1.9rem, 9vw, 2.4rem); }
-  .hero__subtitle        { font-size: 0.88rem; line-height: 1.7; }
-  /* Slightly narrower cards on small phones */
-  .hcard                 { width: 125px; min-height: 105px; font-size: 0.72rem; padding: 0.85rem 0.8rem; }
-  .hcard__icon           { font-size: 1.35rem; }
-
-  .stats-band__grid      { grid-template-columns: repeat(2, 1fr); }
-  .stat-num              { font-size: 1.8rem; }
-  .stat-label            { font-size: 0.62rem; letter-spacing: 0.1em; }
-
-  .pillar-card           { flex-direction: column; gap: 0.75rem; }
-  .pillar-icon           { font-size: 1.6rem; }
-
-  .service-card          { padding: 1.4rem; }
-  .service-card__title   { font-size: 1rem; }
-
-  .why-card              { padding: 1.1rem; gap: 0.75rem; }
-
-  .client-card           { padding: 1.75rem 1.25rem; }
-  .client-card__icon     { font-size: 2rem; }
-  .client-card__name     { font-size: 0.88rem; }
-
-  .cta-banner            { padding: 2.5rem 0; }
-  .cta-banner__actions   { flex-direction: column; width: 100%; }
-  .cta-banner__actions .btn { width: 100%; min-width: unset; }
-}
-
-/* ═══════════════════════════════
-   RESPONSIVE — TINY   ≤ 360px
-═══════════════════════════════ */
-@media (max-width: 360px) {
-  .hero__title           { font-size: 1.75rem; }
-  .hero__subtitle        { font-size: 0.84rem; }
-  .stat-num              { font-size: 1.6rem; }
-  .hcard                 { width: 110px; font-size: 0.68rem; padding: 0.75rem 0.7rem; }
-  .hcard__icon           { font-size: 1.2rem; }
-}
-
-/* ═══════════════════════════════
-   ACCESSIBILITY
-═══════════════════════════════ */
-/* Hide video for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero__video           { display: none; }
-  .hcard                 { animation: none; }
-  .scroll-line           { animation: none; }
-}
-
-/* Pause video on mobile to save battery & data */
-@media (max-width: 768px) {
-  /* .hero__video           { filter: saturate(0.6) brightness(0.45); } */
+@media (prefers-reduced-motion:reduce) {
+  .hero__video { display:none; }
+  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
+  .scroll-dot { animation:none; }
 }
 </style>

@@ -4,11 +4,11 @@
 
       <!-- Logo -->
       <router-link to="/" class="navbar__logo" @click="closeMenu">
-        <span class="logo-mark">E</span>
-        <div class="logo-text">
-          <span class="logo-title">EDUMART</span>
-          <span class="logo-sub">PVT LTD</span>
-        </div>
+        <img
+          src="https://ik.imagekit.io/kp5tixhur/Edumart/logo"
+          alt="Edumart"
+          class="navbar__logo-img"
+        />
       </router-link>
 
       <!-- Desktop Nav -->
@@ -19,22 +19,16 @@
           :to="item.path"
           class="nav-link"
           active-class="nav-link--active"
-        >
-          {{ item.label }}
-        </router-link>
+        >{{ item.label }}</router-link>
       </nav>
 
       <!-- CTA + Burger -->
       <div class="navbar__actions">
-        <router-link to="/contact" class="btn btn-primary hide-mobile">
+        <router-link to="/contact" class="btn-cta hide-mobile">
           Get In Touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </router-link>
-        <button
-          class="burger"
-          :class="{ 'burger--open': menuOpen }"
-          @click="toggleMenu"
-          aria-label="Toggle menu"
-        >
+        <button class="burger" :class="{ 'burger--open': menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -51,9 +45,10 @@
           @click="closeMenu"
         >
           {{ item.label }}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
         </router-link>
-        <router-link to="/contact" class="btn btn-primary" @click="closeMenu" style="margin-top:1rem;">
-          Get In Touch
+        <router-link to="/contact" class="mobile-cta" @click="closeMenu">
+          Get In Touch →
         </router-link>
       </div>
     </transition>
@@ -68,203 +63,257 @@ export default {
       scrolled: false,
       menuOpen: false,
       navItems: [
-        { label: 'Home',           path: '/' },
-        { label: 'About Us',       path: '/about' },
-        { label: 'Services',       path: '/services' },
-        { label: 'Industries',     path: '/industries' },
-        { label: 'Our Clients',    path: '/clients' },
-        { label: 'Future Growth',  path: '/expansion' },
-        { label: 'Investors',      path: '/investors' },
+        { label: 'Home',       path: '/' },
+        { label: 'About',      path: '/about' },
+        { label: 'Services',   path: '/services' },
+        { label: 'Industries', path: '/industries' },
+        { label: 'Clients',    path: '/clients' },
+        { label: 'Growth',     path: '/expansion' },
+        { label: 'Investors',  path: '/investors' },
       ]
     }
   },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll, { passive: true })
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
+  mounted()      { window.addEventListener('scroll', this.onScroll, { passive: true }) },
+  beforeUnmount(){ window.removeEventListener('scroll', this.onScroll) },
   methods: {
-    onScroll() {
-      this.scrolled = window.scrollY > 60
-    },
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen
-      document.body.style.overflow = this.menuOpen ? 'hidden' : ''
-    },
-    closeMenu() {
-      this.menuOpen = false
-      document.body.style.overflow = ''
-    }
+    onScroll()   { this.scrolled = window.scrollY > 60 },
+    toggleMenu() { this.menuOpen = !this.menuOpen; document.body.style.overflow = this.menuOpen ? 'hidden' : '' },
+    closeMenu()  { this.menuOpen = false; document.body.style.overflow = '' }
   }
 }
 </script>
 
 <style scoped>
+/* ─── Heights ─── */
+:root {
+  --nav-height:    54px;
+  --nav-height-sm: 48px;
+}
+
+/* ─── Base ─── */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 1.4rem 0;
-  transition: all 0.35s ease;
-  background: transparent;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: background 0.4s ease, height 0.3s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
+/* ─── Scrolled ─── */
 .navbar--scrolled {
-  background: var(--navy);
-  padding: 0.9rem 0;
-  box-shadow: 0 4px 24px rgba(10,22,40,0.28);
+  height: var(--nav-height-sm);
+  /* background: rgba(11, 25, 41, 0.88); */
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  box-shadow: 0 1px 0 rgba(45,184,154,0.2), 0 8px 32px rgba(0,0,0,0.3);
+}
+/* Blue → Teal gradient shimmer line */
+.navbar--scrolled::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #1B6FBF 30%, #2DB89A 60%, transparent);
 }
 
+/* ─── Layout ─── */
 .navbar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-/* Logo */
+/* ─── Logo ─── */
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
   text-decoration: none;
-}
-
-.logo-mark {
-  width: 42px; height: 42px;
-  background: var(--gold);
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  border-radius: 6px;
   flex-shrink: 0;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+.navbar__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  /* White version for dark navbar — use brightness filter */
+  /* filter: brightness(0) invert(1); */
 }
 
-.logo-title {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: var(--white);
+.navbar__logo:hover .navbar__logo-img {
+  opacity: 0.85;
+  transform: scale(1.02);
 }
 
-.logo-sub {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  font-weight: 400;
-}
+/* Once scrolled, restore natural logo colors */
+/* .navbar--scrolled .navbar__logo-img {
+  filter: brightness(0) invert(1);
+} */
 
-/* Links */
+/* ─── Nav Links ─── */
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  flex: 1;
+  justify-content: center;
+  gap: 0;
 }
 
 .nav-link {
-  padding: 0.5rem 0.85rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.8);
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-  position: relative;
+  padding: 0.4rem 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: black;
+  border-radius: 5px;
+  transition: all 0.2s;
   text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
 }
-
-.nav-link::after {
+.nav-link:hover {
+  color: #2DB89A;
+  background: rgba(255,255,255,0.07);
+}
+.nav-link--active {
+  color: #2DB89A;
+  background: rgba(45,184,154,0.1);
+}
+.nav-link--active::after {
   content: '';
   position: absolute;
-  bottom: 2px; left: 50%; right: 50%;
-  height: 1.5px;
-  background: var(--gold);
-  transition: all 0.25s ease;
+  bottom: 1px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 2px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A);
+  border-radius: 2px;
 }
 
-.nav-link:hover { color: var(--gold); }
-.nav-link:hover::after { left: 0.85rem; right: 0.85rem; }
-.nav-link--active { color: var(--gold); }
-.nav-link--active::after { left: 0.85rem; right: 0.85rem; }
-
-/* Actions */
+/* ─── CTA Button ─── */
 .navbar__actions {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
-/* Burger */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1B6FBF 0%, #2DB89A 100%);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.btn-cta:hover {
+  background: linear-gradient(135deg, #155A9E 0%, #229D83 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(45,184,154,0.3);
+}
+.btn-cta:hover svg { transform: translateX(2px); }
+.btn-cta svg { transition: transform 0.2s; }
+
+/* ─── Burger ─── */
 .burger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 4.5px;
   background: none;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.18);
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: border-color 0.2s;
 }
+.burger:hover { border-color: rgba(45,184,154,0.6); }
+
 .burger span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  display: block; width: 18px; height: 1.5px;
+  background: black; border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
   transform-origin: center;
 }
-.burger--open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.burger--open span:nth-child(2) { opacity: 0; }
-.burger--open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.burger--open span:nth-child(1) { transform: rotate(45deg)  translate(4.5px, 4.5px); }
+.burger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger--open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
 
-/* Mobile nav */
+/* ─── Mobile Menu ─── */
 .mobile-nav {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: rgba(11,25,41,0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 2px solid transparent;
+  background-clip: padding-box;
+  border-image: linear-gradient(90deg, #1B6FBF, #2DB89A) 1;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 1.2rem 1.5rem 1.8rem;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 2rem 2rem;
-  background: var(--navy);
-  border-top: 1px solid rgba(255,255,255,0.08);
+  gap: 0.1rem;
 }
+
 .mobile-nav__link {
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  padding: 0.9rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.74rem; font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  padding: 0.8rem 0.4rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.2s;
 }
-.mobile-nav__link:hover { color: var(--gold); }
+.mobile-nav__link svg { opacity: 0.3; transition: opacity 0.2s, transform 0.2s; }
+.mobile-nav__link:hover { color: #2DB89A; }
+.mobile-nav__link:hover svg { opacity: 0.7; transform: translateX(3px); }
 
-.mobile-menu-enter-active,
-.mobile-menu-leave-active { transition: all 0.3s ease; }
+.mobile-cta {
+  display: block; margin-top: 1.1rem; padding: 0.82rem;
+  background: linear-gradient(135deg, #1B6FBF 0%, #2DB89A 100%);
+  color: #fff; text-align: center;
+  font-size: 0.74rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; border-radius: 8px;
+  transition: opacity 0.2s;
+}
+.mobile-cta:hover { opacity: 0.9; }
+
+/* ─── Transitions ─── */
+.mobile-menu-enter-active { transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+.mobile-menu-leave-active  { transition: all 0.2s ease; }
 .mobile-menu-enter-from,
-.mobile-menu-leave-to { opacity: 0; transform: translateY(-10px); }
+.mobile-menu-leave-to      { opacity: 0; transform: translateY(-12px); }
 
-@media (max-width: 900px) {
-  .nav-link { font-size: 0.72rem; padding: 0.5rem 0.6rem; }
-  .navbar__actions .btn { display: none; }
-}
-@media (max-width: 768px) {
+/* ─── Breakpoints ─── */
+@media (max-width: 1100px) { .nav-link { font-size: 0.62rem; padding: 0.38rem 0.58rem; } }
+@media (max-width: 940px)  { .btn-cta  { display: none; } }
+@media (max-width: 768px)  {
   .burger { display: flex; }
   .navbar__links { display: none; }
-  .navbar__actions .btn { display: none; }
-  .mobile-nav { padding: 1.25rem 1.5rem 2rem; }
+  .navbar { height: 54px; }
+  .navbar--scrolled { height: 48px; }
 }
 @media (max-width: 380px) {
-  .logo-title { font-size: 0.9rem; }
-  .logo-mark  { width: 36px; height: 36px; font-size: 1.2rem; }
-  .navbar     { padding: 1rem 0; }
-  .navbar--scrolled { padding: 0.75rem 0; }
+  .navbar__logo-img { height: 28px; }
 }
+
+.hide-mobile { display: flex; }
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
 </style>
