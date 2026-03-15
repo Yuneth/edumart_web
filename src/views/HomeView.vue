@@ -200,10 +200,10 @@ export default {
     return {
       videoReady: true,
       heroCards: [
-        { label: 'Procurement & Purchasing', vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
+        { label: 'Procurement & Purchasing',   vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
         { label: 'Logistics & Transportation', vb: '0 0 24 24', svg: '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
-        { label: 'Warehousing & Inventory', vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-        { label: 'Supply Chain Consultation', vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+        { label: 'Warehousing & Inventory',    vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+        { label: 'Supply Chain Consultation',  vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
       ],
       stats: [
         { num: '5+',   label: 'Core Services' },
@@ -212,23 +212,23 @@ export default {
         { num: '2+',   label: 'Years Operating' },
       ],
       pillars: [
-        { title: 'Our Vision', desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 7V2"/><path d="m15 9 5-5"/>' },
-        { title: 'Our Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
+        { title: 'Our Vision',  desc: 'To become a trusted and innovative supply chain solutions provider in Sri Lanka with regional expansion capabilities.', vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="2"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 7V2"/><path d="m15 9 5-5"/>' },
+        { title: 'Our Mission', desc: 'To deliver efficient, transparent, and scalable operational solutions that support long-term institutional and corporate growth.',  vb: '0 0 24 24', svg: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
       ],
       services: [
-        { title: 'Procurement & Purchasing', desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.', vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
-        { title: 'Logistics Handling', desc: 'Local and international logistics coordination, import/export documentation, and route optimization.', vb: '0 0 24 24', svg: '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
-        { title: 'Warehousing & Inventory', desc: 'Secure storage, inventory control systems, stock monitoring, and distribution coordination.', vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
-        { title: 'Cargo Transportation', desc: 'Inland cargo transportation, institutional material distribution, and scheduled/urgent deliveries.', vb: '0 0 24 24', svg: '<path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>' },
-        { title: 'Supply Chain Consultation', desc: 'Process optimization, procurement strategy development, cost control, and operational structuring.', vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+        { title: 'Procurement & Purchasing',  desc: 'Strategic sourcing, vendor negotiation, cost optimization, and import purchasing management.',                    vb: '0 0 24 24', svg: '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>' },
+        { title: 'Logistics Handling',        desc: 'Local and international logistics coordination, import/export documentation, and route optimization.',           vb: '0 0 24 24', svg: '<rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>' },
+        { title: 'Warehousing & Inventory',   desc: 'Secure storage, inventory control systems, stock monitoring, and distribution coordination.',                   vb: '0 0 24 24', svg: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
+        { title: 'Cargo Transportation',      desc: 'Inland cargo transportation, institutional material distribution, and scheduled/urgent deliveries.',             vb: '0 0 24 24', svg: '<path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>' },
+        { title: 'Supply Chain Consultation', desc: 'Process optimization, procurement strategy development, cost control, and operational structuring.',            vb: '0 0 24 24', svg: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
       ],
       whyUs: [
-        { title: 'Professional & Structured Systems',  desc: 'Methodically designed operational workflows built for institutional efficiency.' },
-        { title: 'Dedicated Service Management',       desc: 'Hands-on account management and dedicated support for every client.' },
-        { title: 'Strong Supplier Networks',           desc: 'Established relationships with reliable suppliers and logistics partners.' },
-        { title: 'Transparent Procurement',            desc: 'Full visibility into purchasing decisions, costs, and supply chain activities.' },
-        { title: 'Scalable Solutions',                 desc: 'Flexible systems designed to grow alongside your expanding institution.' },
-        { title: 'Long-Term Growth Strategy',          desc: 'Partnerships focused on your success for years to come.' },
+        { title: 'Professional & Structured Systems', desc: 'Methodically designed operational workflows built for institutional efficiency.' },
+        { title: 'Dedicated Service Management',      desc: 'Hands-on account management and dedicated support for every client.' },
+        { title: 'Strong Supplier Networks',          desc: 'Established relationships with reliable suppliers and logistics partners.' },
+        { title: 'Transparent Procurement',           desc: 'Full visibility into purchasing decisions, costs, and supply chain activities.' },
+        { title: 'Scalable Solutions',                desc: 'Flexible systems designed to grow alongside your expanding institution.' },
+        { title: 'Long-Term Growth Strategy',         desc: 'Partnerships focused on your success for years to come.' },
       ],
       clients: [
         'Cambridge College of British English International (PVT) Ltd',
@@ -374,10 +374,10 @@ export default {
   .hero__subtitle { font-size:.92rem; max-width:70%; }
   .hero__actions { flex-direction:column; align-items:stretch; }
   .hero__btn { justify-content:center; max-width:64%; }
-  .hero__visual { width:100%; align-items:flex-start;}
-  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-left:2px; scroll-snap-type:x mandatory; touch-action:pan-x; scrollbar-width:none; -ms-overflow-style:none;}
+  .hero__visual { width:100%; align-items:flex-start; }
+  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-left:2px; scroll-snap-type:x mandatory; touch-action:pan-x; scrollbar-width:none; -ms-overflow-style:none; }
   .hero__card-stack::-webkit-scrollbar { display:none; }
-  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; transform:translateZ(0);}
+  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; transform:translateZ(0); backdrop-filter:none; -webkit-backdrop-filter:none; }
   .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
   .hero__cards-hint { display:block; }
   .hero__scroll-cue { display:none; }
