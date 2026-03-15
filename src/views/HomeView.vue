@@ -40,14 +40,21 @@
 
         <div class="hero__visual" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
           <div class="hero__card-stack">
-            <div v-for="(card, i) in heroCards" :key="card.label" class="hcard" :class="`hcard--${i+1}`">
+            <div v-for="(card, i) in heroCards" :key="'a'+i" class="hcard" :class="`hcard--${i+1}`">
               <div class="hcard__icon-wrap">
                 <svg :viewBox="card.vb" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="card.svg"></svg>
               </div>
               <span class="hcard__label">{{ card.label }}</span>
             </div>
+            <!-- duplicate set for seamless loop -->
+            <!-- <div v-for="(card, i) in heroCards" :key="'b'+i" class="hcard" aria-hidden="true">
+              <div class="hcard__icon-wrap">
+                <svg :viewBox="card.vb" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="card.svg"></svg>
+              </div>
+              <span class="hcard__label">{{ card.label }}</span>
+            </div> -->
           </div>
-          <div class="hero__cards-hint">swipe to explore →</div>
+          <div class="hero__cards-hint">auto scrolling →</div>
         </div>
       </div>
 
@@ -236,7 +243,7 @@ export default {
         'Cambridge College of Information Technology',
       ]
     }
-  }
+  },
 }
 </script>
 
@@ -370,16 +377,32 @@ export default {
 @media (max-width:768px) {
   .hero { padding-top:54px; }
   .hero__inner { grid-template-columns:1fr; gap:2.5rem; padding-top:2rem; padding-bottom:2rem; }
-  .hero__title { font-size:clamp(2.2rem,9vw,3rem); }
-  .hero__subtitle { font-size:.92rem; max-width:70%; }
+  .hero__title { font-size:clamp(3rem,9vw,3rem); }
+  .hero__subtitle { font-size:.92rem; max-width:100%; }
   .hero__actions { flex-direction:column; align-items:stretch; }
-  .hero__btn { justify-content:center; max-width:64%; }
-  .hero__visual { width:100%; align-items:flex-start; }
-  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-left:2px; scroll-snap-type:x mandatory; touch-action:pan-x; scrollbar-width:none; -ms-overflow-style:none; }
-  .hero__card-stack::-webkit-scrollbar { display:none; }
-  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; transform:translateZ(0); backdrop-filter:none; -webkit-backdrop-filter:none; }
-  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
-  .hero__cards-hint { display:block; }
+  .hero__btn { justify-content:center; max-width:100%; }
+  .hero__visual { width:100%; align-items:flex-start; overflow:hidden; }
+  .hero__card-stack {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: .75rem;
+    padding-bottom: .5rem;
+    animation: cardMarquee 12s linear infinite;
+    width: max-content;
+  }
+  .hero__card-stack:hover { animation-play-state: paused; }
+  @keyframes cardMarquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-608px); }
+  }
+  .hcard {
+    flex: 0 0 140px;
+    width: 140px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation: none; }
+  .hero__cards-hint { display: block; }
   .hero__scroll-cue { display:none; }
   .stats-band__inner { grid-template-columns:repeat(2,1fr); }
   .stat-item { border-right:none; border-bottom:1px solid rgba(10,22,40,.1); padding:1.6rem 1rem; }
