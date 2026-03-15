@@ -374,10 +374,10 @@ export default {
   .hero__subtitle { font-size:.92rem; max-width:70%; }
   .hero__actions { flex-direction:column; align-items:stretch; }
   .hero__btn { justify-content:center; max-width:64%; }
-  .hero__visual { width:100%; align-items:flex-start; overflow:visible;}
-  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; max-width:100%; gap:.75rem; padding-bottom:.5rem; padding-right:2rem; scrollbar-width:none; -ms-overflow-style:none; padding-right:2.5rem; scrollbar-width:none; -ms-overflow-style:none;}
+  .hero__visual { width:100%; align-items:flex-start;}
+  .hero__card-stack { display:flex; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; max-width:100%; gap:.75rem; padding-bottom:.5rem; scroll-snap-type:x mandatory; scrollbar-width:none;}
   .hero__card-stack::-webkit-scrollbar { display:none; }
-  .hcard { flex:0 0 auto; width:140px; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .hcard { flex:0 0 auto; width:140px; scroll-snap-align:start; }
   .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
   .hero__cards-hint { display:block; }
   .hero__scroll-cue { display:none; }
