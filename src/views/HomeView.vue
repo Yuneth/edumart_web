@@ -5,7 +5,7 @@
     <section class="hero">
       <div class="hero__video-wrap" v-if="videoReady">
         <video class="hero__video" autoplay muted loop playsinline preload="metadata" @error="videoReady = false">
-          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/animation_of_data_processing_against_caucasian_male_supervisor_checking_stock_at_warehouse%20(1080p).mp4" type="video/mp4" />
+          <source src="https://ik.imagekit.io/kp5tixhur/Edumart/cargo%20shipping1.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="hero__overlay"></div>
@@ -82,14 +82,10 @@
           <h2 class="section-heading">Managing Operations.<br><em>Enabling Growth.</em></h2>
           <div class="section-rule"></div>
           <p class="body-text">
-            Edumart (Pvt) Ltd was established to provide integrated supply chain and
-            operational management services with a focus on reliability, cost efficiency,
-            and strategic expansion across Sri Lanka.
+            Edumart (Pvt) Ltd is an integrated logistics and supply chain solutions provider delivering reliable, efficient, and scalable operational services to institutions and corporate organizations. 
           </p>
           <p class="body-text" style="margin-top:1rem;">
-            We specialize in procurement, logistics, warehousing, cargo transportation,
-            and supply chain consultancy delivering structured end-to-end operational
-            support tailored to institutional requirements.
+            We specialize in procurement management, logistics coordination, warehousing solutions, cargo transportation, and supply chain consultancy. Our structured operational systems help organizations streamline purchasing, logistics, and inventory management while maintaining transparency and cost efficiency.
           </p>
           <router-link to="/about" class="text-link" style="margin-top:2rem; display:inline-flex;">
             Discover Our Story
@@ -173,7 +169,7 @@
       <div class="container">
         <div class="text-center" data-aos="fade-up">
           <p class="section-eyebrow">Our Partners</p>
-          <h2 class="section-heading">Trusted by Leading <em>Institutions</em></h2>
+          <h2 class="section-heading">Primary Client <em>Partnerships</em></h2>
           <div class="section-rule centered"></div>
           <p class="intro-text">
             We proudly serve leading educational institutions, building long-term

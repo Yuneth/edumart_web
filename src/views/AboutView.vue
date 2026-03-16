@@ -26,21 +26,40 @@
           <h2 class="section-heading">Who We <em>Are</em></h2>
           <div class="section-rule"></div>
           <p class="body-text">
-            Edumart (Pvt) Ltd was established to provide integrated supply chain and
-            operational management services with a focus on reliability, cost efficiency,
-            and strategic expansion. We specialize in procurement, logistics, warehousing,
-            cargo transportation, and supply chain consultancy.
+            Edumart (Pvt) Ltd was established to provide structured supply chain management and operational solutions with a focus on reliability, cost efficiency, and strategic expansion. We specialize in procurement, logistics, warehousing, cargo transportation, and supply chain consultancy.
           </p>
           <p class="body-text" style="margin-top:1rem;">
-            Through structured systems and professional service management, we ensure
-            smooth operational workflows for institutions and corporate clients across
-            Sri Lanka and beyond.
+            Through structured systems and professional service management, we ensure smooth operational workflows for institutions and corporate clients across Sri Lanka and beyond.
           </p>
         </div>
         <div class="overview-visual" data-aos="fade-left" data-aos-delay="150">
+
+          <!-- ═══ IMAGE 1: Stacked split-frame with floating thumb ═══ -->
+          <div class="img-split-frame">
+            <div class="img-split-frame__main">
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=85"
+                alt="Warehouse operations"
+              />
+              <div class="img-split-frame__main-overlay"></div>
+            </div>
+            <div class="img-split-frame__thumb">
+              <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&q=80"
+                alt="Logistics planning"
+              />
+              <div class="img-split-frame__thumb-ring"></div>
+            </div>
+            <div class="img-split-frame__dots"></div>
+            <div class="img-split-frame__tag">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Sri Lanka Operations
+            </div>
+          </div>
+
           <div class="years-badge">
             <div class="years-badge__inner">
-              <span class="years-num">2+</span>
+              <span class="years-num">02+</span>
               <span class="years-label">Years of<br>Excellence</span>
             </div>
           </div>
@@ -65,6 +84,24 @@
           <h2 class="section-heading light">Vision & <em>Mission</em></h2>
           <div class="section-rule centered"></div>
         </div>
+
+        <!-- ═══ IMAGE 2: Layered diamond mosaic ═══ -->
+        <div class="img-diamond-mosaic" data-aos="zoom-in" data-aos-delay="80">
+          <div class="img-diamond-mosaic__border-back"></div>
+          <div class="img-diamond-mosaic__frame">
+            <img
+              src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=900&q=85"
+              alt="Supply chain logistics"
+            />
+            <div class="img-diamond-mosaic__wash"></div>
+          </div>
+          <div class="img-diamond-mosaic__border-front"></div>
+          <div class="img-diamond-mosaic__pill">
+            <span class="img-diamond-mosaic__pill-num">500+</span>
+            <span class="img-diamond-mosaic__pill-txt">Shipments<br>Handled</span>
+          </div>
+        </div>
+
         <div class="vm-grid">
           <div class="vm-card vm-card--vision" data-aos="fade-up">
             <div class="vm-card__icon-ring">
@@ -104,6 +141,24 @@
           <h2 class="section-heading">Core <em>Values</em></h2>
           <div class="section-rule centered"></div>
         </div>
+
+        <!-- ═══ IMAGE 3: Panoramic arc banner ═══ -->
+        <div class="img-arc-banner" data-aos="fade-up" data-aos-delay="60">
+          <div class="img-arc-banner__frame">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=85"
+              alt="Team collaboration"
+            />
+            <div class="img-arc-banner__overlay"></div>
+            <div class="img-arc-banner__caption">
+              <span class="img-arc-banner__caption-eyebrow">Built on trust</span>
+              <span class="img-arc-banner__caption-text">People Behind Our Excellence</span>
+            </div>
+          </div>
+          <div class="img-arc-banner__arc-top"></div>
+          <div class="img-arc-banner__arc-bottom"></div>
+        </div>
+
         <div class="values-grid">
           <div v-for="(val, i) in values" :key="val.title" class="value-card" :data-aos="'fade-up'" :data-aos-delay="i*70">
             <div class="value-card__icon">
@@ -124,11 +179,11 @@ export default {
   data() {
     return {
       specializations: [
-        'Procurement and purchasing management',
-        'Logistics coordination',
-        'Warehouse and inventory management',
-        'Cargo handling and transportation',
-        'Supply chain consultation',
+        'Procurement and Purchasing Management',
+        'Logistics Coordination and Shipment Monitoring',
+        'Warehouse and Inventory Management',
+        'Cargo Transportation Services',
+        'Supply Chain Consultation and Planning',
       ],
       values: [
         { title: 'Reliability',  desc: 'Consistent, dependable service delivery you can count on every time.', vb: '0 0 24 24', svg: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
@@ -144,6 +199,7 @@ export default {
 </script>
 
 <style scoped>
+/* ─── Base tokens ─── */
 .section-eyebrow { font-size:.62rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#2DB89A; margin-bottom:.8rem; display:block; }
 .section-eyebrow.light { color:rgba(45,184,154,.85); }
 .section-heading { font-family:var(--font-display,'Playfair Display',Georgia,serif); font-size:clamp(2rem,4vw,3rem); font-weight:300; color:#0B1929; line-height:1.12; margin-bottom:1.2rem; }
@@ -154,7 +210,7 @@ export default {
 .body-text { font-size:.95rem; color:rgba(10,22,40,.6); line-height:1.85; }
 .text-center { text-align:center; }
 
-/* Hero */
+/* ─── Hero ─── */
 .page-hero { position:relative; overflow:hidden; padding:120px 0 90px; }
 .page-hero__bg { position:absolute; inset:0; z-index:0; background:linear-gradient(135deg,#0D1E36 0%,#0A1628 60%,#07101E 100%); }
 .page-hero__glow { position:absolute; z-index:1; top:-20%; right:-10%; width:700px; height:600px; border-radius:50%; background:radial-gradient(ellipse,rgba(45,184,154,.07) 0%,transparent 65%); pointer-events:none; }
@@ -168,7 +224,7 @@ export default {
 .page-hero__crumbs a:hover { color:rgba(45,184,154,.9); }
 .page-hero__crumbs svg { opacity:.3; }
 
-/* Overview */
+/* ─── Overview ─── */
 .overview-section { background:#fff; }
 .overview-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
 .overview-visual { display:flex; flex-direction:column; gap:2rem; }
@@ -180,7 +236,82 @@ export default {
 .spec-item { display:flex; align-items:center; gap:.85rem; font-size:.9rem; color:rgba(10,22,40,.7); font-weight:500; }
 .spec-check { width:22px; height:22px; border-radius:50%; background:rgba(45,184,154,.12); border:1px solid rgba(45,184,154,.25); display:grid; place-items:center; color:#2DB89A; flex-shrink:0; }
 
-/* Vision & Mission */
+/* ════════════════════════════════════════
+   IMAGE 1 — Split-frame with floating thumb
+   ════════════════════════════════════════ */
+.img-split-frame {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  padding-bottom: 38px; /* room for the floating thumb */
+}
+
+.img-split-frame__main {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  clip-path: polygon(0 0, 100% 0, 100% 82%, 85% 100%, 0 100%);
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 24px 56px rgba(10,22,40,.18), 0 4px 12px rgba(27,111,191,.12);
+}
+.img-split-frame__main img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.img-split-frame:hover .img-split-frame__main img { transform: scale(1.05); }
+.img-split-frame__main-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(200deg, rgba(27,111,191,.15) 0%, rgba(45,184,154,.22) 60%, rgba(10,22,40,.28) 100%);
+}
+
+.img-split-frame__thumb {
+  position: absolute;
+  bottom: 0;
+  left: -18px;
+  width: 96px; height: 96px;
+  z-index: 3;
+}
+.img-split-frame__thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 28px rgba(10,22,40,.22);
+}
+.img-split-frame__thumb-ring {
+  position: absolute; inset: -7px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(45,184,154,.55);
+  animation: spin-slow 18s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-slow { to { transform:rotate(360deg); } }
+
+.img-split-frame__dots {
+  position: absolute;
+  top: -16px; right: -16px;
+  width: 72px; height: 72px;
+  background-image: radial-gradient(circle, rgba(45,184,154,.5) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none;
+}
+
+.img-split-frame__tag {
+  position: absolute;
+  top: 20px; right: -4px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A);
+  color: #fff;
+  font-size: .62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding: .38rem 1rem .38rem .72rem;
+  border-radius: 20px 0 0 20px;
+  display: flex; align-items: center; gap: .4rem;
+  box-shadow: 0 4px 14px rgba(45,184,154,.4);
+  z-index: 4;
+}
+
+/* ─── Vision & Mission ─── */
 .vm-section { position:relative; overflow:hidden; }
 .vm-section__bg { position:absolute; inset:0; z-index:0; background:linear-gradient(135deg,#0F2236 0%,#0B1929 100%); }
 .vm-section__bg::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(45,184,154,.25),transparent); }
@@ -197,7 +328,73 @@ export default {
 .vm-card__body { font-size:.9rem; color:rgba(255,255,255,.55); line-height:1.8; }
 .vm-card__body--dark { color:rgba(10,22,40,.6); }
 
-/* Values */
+/* ════════════════════════════════════════
+   IMAGE 2 — Layered diamond mosaic
+   ════════════════════════════════════════ */
+.img-diamond-mosaic {
+  position: relative;
+  width: 220px; height: 220px;
+  margin: 0 auto 3.2rem;
+}
+
+.img-diamond-mosaic__border-back {
+  position: absolute; inset: 0;
+  border: 1.5px solid rgba(45,184,154,.22);
+  border-radius: 20px;
+  transform: rotate(8deg);
+}
+
+.img-diamond-mosaic__frame {
+  position: absolute;
+  inset: 18px;
+  border-radius: 16px;
+  transform: rotate(12deg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(45,184,154,.15);
+}
+.img-diamond-mosaic__frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transform: rotate(-12deg) scale(1.25);
+  transition: transform .55s ease;
+}
+.img-diamond-mosaic:hover .img-diamond-mosaic__frame img { transform: rotate(-12deg) scale(1.32); }
+.img-diamond-mosaic__wash {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(27,111,191,.28), rgba(45,184,154,.18));
+  mix-blend-mode: multiply;
+}
+
+.img-diamond-mosaic__border-front {
+  position: absolute; inset: 6px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px;
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.img-diamond-mosaic__pill {
+  position: absolute;
+  bottom: -12px; right: -20px;
+  background: linear-gradient(135deg, #1B6FBF, #2DB89A);
+  border-radius: 14px;
+  padding: .65rem 1rem;
+  display: flex; align-items: center; gap: .65rem;
+  box-shadow: 0 8px 24px rgba(27,111,191,.45);
+  z-index: 5;
+  white-space: nowrap;
+}
+.img-diamond-mosaic__pill-num {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 1.45rem; font-weight:700; color:#fff; line-height:1;
+}
+.img-diamond-mosaic__pill-txt {
+  font-size: .58rem; font-weight:700;
+  color: rgba(255,255,255,.82);
+  line-height:1.45; text-transform:uppercase; letter-spacing:.06em;
+}
+
+/* ─── Values ─── */
 .values-section { background:#F4F6F9; }
 .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
 .value-card { padding:2.2rem 1.8rem; border-radius:16px; border:1px solid rgba(10,22,40,.07); background:#fff; text-align:center; transition:all .3s ease; position:relative; overflow:hidden; }
@@ -208,18 +405,105 @@ export default {
 .value-card__title { font-size:1rem; font-weight:700; color:#0B1929; margin-bottom:.6rem; }
 .value-card__desc { font-size:.855rem; color:rgba(10,22,40,.55); line-height:1.75; }
 
-/* Responsive */
-@media (max-width:900px) { .vm-grid { grid-template-columns:1fr; } .vm-card { padding:2.5rem; } }
+/* ════════════════════════════════════════
+   IMAGE 3 — Panoramic arc banner
+   ════════════════════════════════════════ */
+.img-arc-banner {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 50px rgba(10,22,40,.12);
+}
+
+.img-arc-banner__frame {
+  position: relative;
+  width: 100%; height: 220px;
+  overflow: hidden;
+}
+.img-arc-banner__frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%; display: block;
+  transition: transform .6s ease;
+}
+.img-arc-banner:hover .img-arc-banner__frame img { transform: scale(1.04); }
+.img-arc-banner__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(10,22,40,.8) 0%,
+    rgba(10,22,40,.42) 50%,
+    rgba(27,111,191,.28) 100%
+  );
+}
+
+.img-arc-banner__caption {
+  position: absolute;
+  bottom: 28px; left: 36px;
+  display: flex; flex-direction: column; gap: .3rem;
+  z-index: 2;
+}
+.img-arc-banner__caption-eyebrow {
+  font-size: .58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#2DB89A;
+}
+.img-arc-banner__caption-text {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: clamp(1.1rem,2.5vw,1.6rem); font-weight:300; color:#fff; line-height:1.2;
+}
+
+/* Arched notch cut from the top-center */
+.img-arc-banner__arc-top {
+  position: absolute;
+  top: -1px; left: 50%; transform: translateX(-50%);
+  width: 150px; height: 30px;
+  background: #F4F6F9;
+  border-radius: 0 0 75px 75px;
+  z-index: 3;
+}
+
+/* Teal line at bottom */
+.img-arc-banner__arc-bottom {
+  position: absolute; bottom:0; left:0; right:0;
+  height: 3px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A, #1B6FBF);
+  z-index: 3;
+}
+
+/* ─── Responsive ─── */
+@media (max-width:900px) {
+  .vm-grid { grid-template-columns:1fr; }
+  .vm-card { padding:2.5rem; }
+}
 @media (max-width:768px) {
   .page-hero { padding:100px 0 60px; }
-  .overview-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .overview-grid { grid-template-columns:1fr; gap:3rem; }
   .values-grid { grid-template-columns:repeat(2,1fr); }
   .years-badge__inner { padding:1.5rem 2rem; gap:1.2rem; }
   .years-num { font-size:3rem; }
+  /* Image 1 */
+  .img-split-frame { max-width:100%; }
+  .img-split-frame__main { height:220px; }
+  /* Image 2 */
+  .img-diamond-mosaic { width:190px; height:190px; }
+  /* Image 3 */
+  .img-arc-banner__frame { height:180px; }
+  .img-arc-banner__caption { left:24px; bottom:20px; }
 }
 @media (max-width:540px) {
   .values-grid { grid-template-columns:1fr; }
   .years-badge__inner { flex-direction:column; gap:.5rem; text-align:center; align-self:stretch; }
   .value-card { padding:1.8rem 1.4rem; }
+  /* Image 1 */
+  .img-split-frame__main { height:195px; }
+  .img-split-frame__thumb { width:78px; height:78px; left:-12px; }
+  .img-split-frame__tag { font-size:.56rem; }
+  /* Image 2 */
+  .img-diamond-mosaic { width:165px; height:165px; }
+  .img-diamond-mosaic__pill { bottom:-8px; right:-12px; padding:.5rem .75rem; gap:.5rem; }
+  .img-diamond-mosaic__pill-num { font-size:1.15rem; }
+  /* Image 3 */
+  .img-arc-banner__frame { height:155px; }
+  .img-arc-banner__caption { left:18px; bottom:16px; }
+  .img-arc-banner__arc-top { width:100px; height:22px; }
 }
 </style>

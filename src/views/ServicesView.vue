@@ -59,11 +59,11 @@ export default {
           title: 'Procurement & Purchasing Management',
           description: 'We ensure high quality products at competitive pricing while maintaining strong and reliable supplier networks. Our strategic approach to procurement reduces costs and improves supply reliability.',
           features: [
-            'Strategic sourcing and supplier evaluation',
-            'Vendor negotiation and cost optimization',
-            'Institutional purchasing coordination',
-            'Import purchasing management',
-            'Vendor relationship development',
+            'Strategic Sourcing and Supplier Evaluation',
+            'Vendor Negotiation and Pricing Optimization',
+            'Institutional Purchasing Coordination',
+            'Import Purchasing Management',
+            'Vendor Relationship Development',
           ]
         },
         {
@@ -72,10 +72,10 @@ export default {
           title: 'Logistics Handling Services',
           description: 'Our logistics solutions are designed to reduce delays and improve operational efficiency. We coordinate both local and international freight with full documentation support.',
           features: [
-            'Local and international logistics coordination',
-            'Import and export documentation',
-            'Shipment tracking and monitoring',
-            'Delivery scheduling and route optimization',
+            'Local and International Logistics Coordination',
+            'Import and Export Documentation Management',
+            'Shipment Tracking and Monitoring',
+            'Delivery Scheduling and Route Planning',
           ]
         },
         {
@@ -84,11 +84,11 @@ export default {
           title: 'Warehousing & Inventory Management',
           description: 'We provide scalable and organized warehousing solutions tailored to institutional growth. Our inventory systems ensure accurate stock visibility at all times.',
           features: [
-            'Secure storage facilities',
-            'Inventory control systems',
-            'Stock monitoring and reporting',
-            'Distribution coordination',
-            'Asset and materials management',
+            'Secure Storage Facilities',
+            'Inventory Monitoring Systems',
+            'Stock Reporting and Control',
+            'Distribution Coordination',
+            'Asset and Materials Management',
           ]
         },
         {
@@ -97,10 +97,10 @@ export default {
           title: 'Cargo Transportation Services',
           description: 'Our transportation network ensures timely and secure movement of goods. We handle everything from routine scheduled deliveries to urgent institutional requirements.',
           features: [
-            'Inland cargo transportation',
-            'Institutional material distribution',
-            'Safe handling procedures',
-            'Scheduled and urgent deliveries',
+            'Inland Cargo Transportation',
+            'Institutional Material Distribution',
+            'Safe Handling Procedures',
+            'Scheduled and Urgent Deliveries Services',
           ]
         },
         {
@@ -109,11 +109,11 @@ export default {
           title: 'Supply Chain Consultation Services',
           description: 'We help organizations build structured, efficient, and future-ready operational systems. Our consultancy is grounded in practical experience and best-practice frameworks.',
           features: [
-            'Supply chain process optimization',
-            'Procurement strategy development',
-            'Cost control and budgeting advisory',
-            'Import and logistics planning',
-            'Operational system structuring',
+            'Supply Chain Process Optimization',
+            'Procurement Strategy Development',
+            'Cost Control Advisory',
+            'Import and Logistics Planning',
+            'Operational System Structuring',
           ]
         },
       ]
