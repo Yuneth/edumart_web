@@ -38,14 +38,14 @@
           <div class="img-split-frame">
             <div class="img-split-frame__main">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=85"
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistic1.jpg"
                 alt="Warehouse operations"
               />
               <div class="img-split-frame__main-overlay"></div>
             </div>
             <div class="img-split-frame__thumb">
               <img
-                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&q=80"
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistic3.jfif"
                 alt="Logistics planning"
               />
               <div class="img-split-frame__thumb-ring"></div>
@@ -90,7 +90,7 @@
           <div class="img-diamond-mosaic__border-back"></div>
           <div class="img-diamond-mosaic__frame">
             <img
-              src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=900&q=85"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/container1.jfif"
               alt="Supply chain logistics"
             />
             <div class="img-diamond-mosaic__wash"></div>
@@ -146,7 +146,7 @@
         <div class="img-arc-banner" data-aos="fade-up" data-aos-delay="60">
           <div class="img-arc-banner__frame">
             <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=85"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/team1.jfif"
               alt="Team collaboration"
             />
             <div class="img-arc-banner__overlay"></div>
