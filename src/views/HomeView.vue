@@ -46,13 +46,6 @@
               </div>
               <span class="hcard__label">{{ card.label }}</span>
             </div>
-            <!-- duplicate set for seamless loop -->
-            <!-- <div v-for="(card, i) in heroCards" :key="'b'+i" class="hcard" aria-hidden="true">
-              <div class="hcard__icon-wrap">
-                <svg :viewBox="card.vb" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" v-html="card.svg"></svg>
-              </div>
-              <span class="hcard__label">{{ card.label }}</span>
-            </div> -->
           </div>
           <div class="hero__cards-hint">auto scrolling →</div>
         </div>
@@ -82,7 +75,7 @@
           <h2 class="section-heading">Managing Operations.<br><em>Enabling Growth.</em></h2>
           <div class="section-rule"></div>
           <p class="body-text">
-            Edumart (Pvt) Ltd is an integrated logistics and supply chain solutions provider delivering reliable, efficient, and scalable operational services to institutions and corporate organizations. 
+            Edumart (Pvt) Ltd is an integrated logistics and supply chain solutions provider delivering reliable, efficient, and scalable operational services to institutions and corporate organizations.
           </p>
           <p class="body-text" style="margin-top:1rem;">
             We specialize in procurement management, logistics coordination, warehousing solutions, cargo transportation, and supply chain consultancy. Our structured operational systems help organizations streamline purchasing, logistics, and inventory management while maintaining transparency and cost efficiency.
@@ -93,6 +86,40 @@
           </router-link>
         </div>
         <div class="about-snippet__pillars" data-aos="fade-left" data-aos-delay="150">
+
+          <!-- ═══ IMAGE 1: Stacked split-frame in about column ═══ -->
+          <div class="home-img home-img--split" data-aos="fade-up" data-aos-delay="80">
+            <!-- Rotated back card -->
+            <div class="home-img__split-back"></div>
+            <!-- Main angled photo -->
+            <div class="home-img__split-frame">
+              <img
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistic1.jpg"
+                alt="Warehouse operations"
+              />
+              <div class="home-img__split-overlay"></div>
+              <div class="home-img__split-caption">
+                <span class="home-img__split-eye">Since 2022</span>
+                <span class="home-img__split-txt">Operational<br><em>Excellence</em></span>
+              </div>
+            </div>
+            <!-- Floating circular thumb -->
+            <div class="home-img__split-thumb">
+              <img
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/logistic3.jfif"
+                alt="Team planning"
+              />
+              <div class="home-img__split-thumb-ring"></div>
+            </div>
+            <!-- Dot grid -->
+            <div class="home-img__split-dots"></div>
+            <!-- Pill tag -->
+            <div class="home-img__split-pill">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Sri Lanka Wide
+            </div>
+          </div>
+
           <div v-for="pillar in pillars" :key="pillar.title" class="pillar-card">
             <div class="pillar-card__header">
               <div class="pillar-icon-ring">
@@ -115,6 +142,38 @@
           <h2 class="section-heading">Our Core <em>Services</em></h2>
           <div class="section-rule centered"></div>
         </div>
+
+        <!-- ═══ IMAGE 2: Wide panoramic banner above service cards ═══ -->
+        <div class="home-img home-img--banner" data-aos="fade-up" data-aos-delay="60">
+          <div class="home-img__banner-frame">
+            <img
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/container1.jfif"
+              alt="Logistics services"
+            />
+            <div class="home-img__banner-overlay"></div>
+            <!-- Left caption -->
+            <div class="home-img__banner-caption">
+              <span class="home-img__banner-eye">End-to-end solutions</span>
+              <span class="home-img__banner-title">From Procurement<br><em>to Delivery</em></span>
+            </div>
+            <!-- Right stat cluster -->
+            <div class="home-img__banner-stats">
+              <div class="home-img__banner-stat">
+                <span class="home-img__banner-stat-num">05</span>
+                <span class="home-img__banner-stat-lbl">Core<br>Services</span>
+              </div>
+              <div class="home-img__banner-stat-div"></div>
+              <div class="home-img__banner-stat">
+                <span class="home-img__banner-stat-num">∞</span>
+                <span class="home-img__banner-stat-lbl">Scalable<br>Growth</span>
+              </div>
+            </div>
+          </div>
+          <!-- Parallelogram notch bottom -->
+          <div class="home-img__banner-notch"></div>
+          <div class="home-img__banner-rule"></div>
+        </div>
+
         <div class="services-grid">
           <div v-for="(service, i) in services" :key="service.title" class="service-card" :data-aos="'fade-up'" :data-aos-delay="i*70">
             <div class="service-card__icon-wrap">
@@ -176,6 +235,38 @@
             partnerships founded on trust, reliability, and performance excellence.
           </p>
         </div>
+
+        <!-- ═══ IMAGE 3: Duo overlap side-by-side above client cards ═══ -->
+        <div class="home-img home-img--duo" data-aos="fade-up" data-aos-delay="60">
+          <!-- Back photo: rotated slightly, recessed -->
+          <div class="home-img__duo-back">
+            <img
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/client2.jfif"
+              alt="Education sector"
+            />
+            <div class="home-img__duo-back-wash"></div>
+          </div>
+          <!-- Front photo: forward, clipped left edge -->
+          <div class="home-img__duo-front">
+            <img
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/team1.jfif"
+              alt="Client partnerships"
+            />
+            <div class="home-img__duo-front-wash"></div>
+            <div class="home-img__duo-caption">
+              <span class="home-img__duo-eye">Trusted partners</span>
+              <span class="home-img__duo-title">Institutions That<br><em>Rely on Us</em></span>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="home-img__duo-badge">
+            <span class="home-img__duo-badge-num">3+</span>
+            <span class="home-img__duo-badge-txt">Active<br>Clients</span>
+          </div>
+          <!-- Dot grid -->
+          <div class="home-img__duo-dots"></div>
+        </div>
+
         <div class="clients-grid">
           <div v-for="client in clients" :key="client" class="client-card" data-aos="zoom-in">
             <div class="client-card__emblem">
@@ -361,6 +452,289 @@ export default {
 .client-card:hover .client-card__emblem { background:rgba(45,184,154,.15); }
 .client-card__name { font-size:.9rem; font-weight:600; color:#0B1929; line-height:1.55; }
 
+/* ═══════════════════════════════════════════════════════
+   IMAGE 1 — Stacked split-frame (About column)
+   ═══════════════════════════════════════════════════════ */
+.home-img--split {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.8rem;
+  padding-bottom: 34px;
+}
+
+/* Rotated back card */
+.home-img__split-back {
+  position: absolute;
+  inset: 8px -10px 24px 10px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(27,111,191,.1), rgba(45,184,154,.15));
+  border: 1px solid rgba(45,184,154,.2);
+  transform: rotate(-3deg);
+  z-index: 0;
+}
+
+/* Main photo clipped on bottom-right corner */
+.home-img__split-frame {
+  position: relative;
+  width: 100%; height: 240px;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 86% 100%, 0 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 22px 52px rgba(10,22,40,.18);
+  z-index: 1;
+}
+.home-img__split-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .6s ease;
+}
+.home-img--split:hover .home-img__split-frame img { transform: scale(1.05); }
+.home-img__split-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,22,40,.06) 0%, rgba(10,22,40,.52) 100%);
+}
+
+/* Caption inside */
+.home-img__split-caption {
+  position: absolute; bottom: 22px; left: 20px;
+  display: flex; flex-direction: column; gap: .24rem; z-index: 2;
+}
+.home-img__split-eye {
+  font-size: .5rem; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: #2DB89A;
+}
+.home-img__split-txt {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 1.05rem; font-weight: 300; color: #fff; line-height: 1.25;
+}
+.home-img__split-txt em { font-style: italic; color: #2DB89A; }
+
+/* Floating circular thumb */
+.home-img__split-thumb {
+  position: absolute;
+  bottom: 0; left: -14px;
+  width: 88px; height: 88px;
+  z-index: 4;
+}
+.home-img__split-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 24px rgba(10,22,40,.2);
+}
+.home-img__split-thumb-ring {
+  position: absolute; inset: -7px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(45,184,154,.5);
+  animation: spin-slow 18s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+/* Dot grid top-right */
+.home-img__split-dots {
+  position: absolute; top: -14px; right: -14px;
+  width: 68px; height: 68px;
+  background-image: radial-gradient(circle, rgba(45,184,154,.46) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none; z-index: 0;
+}
+
+/* Bottom pill */
+.home-img__split-pill {
+  position: absolute;
+  bottom: 8px; right: 10px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A);
+  color: #fff;
+  font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: .36rem .9rem .36rem .7rem;
+  border-radius: 999px;
+  display: flex; align-items: center; gap: .38rem;
+  box-shadow: 0 5px 16px rgba(27,111,191,.36);
+  white-space: nowrap; z-index: 4;
+}
+
+/* ═══════════════════════════════════════════════════════
+   IMAGE 2 — Wide panoramic banner (Services section)
+   ═══════════════════════════════════════════════════════ */
+.home-img--banner {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.home-img__banner-frame {
+  position: relative;
+  width: 100%; height: 220px;
+  /* Diagonal clips both ends */
+  clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10,22,40,.13);
+}
+.home-img__banner-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%; display: block;
+  transition: transform .65s ease;
+}
+.home-img--banner:hover .home-img__banner-frame img { transform: scale(1.04); }
+.home-img__banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg,
+    rgba(10,22,40,.82) 0%,
+    rgba(10,22,40,.38) 50%,
+    rgba(27,111,191,.26) 100%
+  );
+}
+
+/* Left caption */
+.home-img__banner-caption {
+  position: absolute; bottom: 28px; left: 40px;
+  display: flex; flex-direction: column; gap: .3rem; z-index: 2;
+}
+.home-img__banner-eye {
+  font-size: .54rem; font-weight: 700; letter-spacing: .24em;
+  text-transform: uppercase; color: #2DB89A;
+}
+.home-img__banner-title {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: clamp(1.1rem,2.4vw,1.6rem); font-weight: 300; color: #fff; line-height: 1.22;
+}
+.home-img__banner-title em { font-style: italic; color: #2DB89A; }
+
+/* Right stat cluster */
+.home-img__banner-stats {
+  position: absolute; right: 40px; bottom: 26px;
+  display: flex; align-items: center; gap: 1.3rem; z-index: 2;
+}
+.home-img__banner-stat { display: flex; flex-direction: column; gap: .2rem; text-align: right; }
+.home-img__banner-stat-num {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 2rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.home-img__banner-stat-lbl {
+  font-size: .52rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,.5); line-height: 1.45;
+}
+.home-img__banner-stat-div {
+  width: 1px; height: 36px;
+  background: rgba(255,255,255,.18);
+}
+
+/* Parallelogram notch from bottom */
+.home-img__banner-notch {
+  width: 120px; height: 26px;
+  background: #F4F6F9; /* matches services-section bg */
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  margin: 0 auto; margin-top: -2px;
+  position: relative; z-index: 1;
+}
+.home-img__banner-rule {
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A, #1B6FBF);
+  margin-top: -26px; position: relative; z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   IMAGE 3 — Overlap duo (Clients section)
+   ═══════════════════════════════════════════════════════ */
+.home-img--duo {
+  position: relative;
+  height: 260px;
+  margin-bottom: 3rem;
+}
+
+/* Back photo: rotated, recessed */
+.home-img__duo-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 52%; height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotate(-2.5deg) translateY(10px);
+  box-shadow: 0 14px 36px rgba(10,22,40,.1);
+  z-index: 0;
+}
+.home-img__duo-back img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.home-img__duo-back-wash {
+  position: absolute; inset: 0;
+  background: rgba(10,22,40,.2);
+}
+
+/* Front photo: overlapping, clipped diagonal left edge */
+.home-img__duo-front {
+  position: absolute;
+  top: 0; right: 0;
+  width: 70%; height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%);
+  box-shadow: 0 24px 56px rgba(10,22,40,.18), 0 4px 12px rgba(27,111,191,.1);
+  z-index: 1;
+}
+.home-img__duo-front img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .6s ease;
+}
+.home-img--duo:hover .home-img__duo-front img { transform: scale(1.04); }
+.home-img__duo-front-wash {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    rgba(10,22,40,.72) 0%,
+    rgba(10,22,40,.3) 48%,
+    rgba(27,111,191,.2) 100%
+  );
+}
+
+/* Caption inside front photo */
+.home-img__duo-caption {
+  position: absolute; bottom: 24px; left: 28px;
+  display: flex; flex-direction: column; gap: .26rem; z-index: 2;
+}
+.home-img__duo-eye {
+  font-size: .52rem; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: #2DB89A;
+}
+.home-img__duo-title {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: clamp(.95rem,2vw,1.3rem); font-weight: 300; color: #fff; line-height: 1.22;
+}
+.home-img__duo-title em { font-style: italic; color: #2DB89A; }
+
+/* Floating gradient badge top-right */
+.home-img__duo-badge {
+  position: absolute;
+  top: -14px; right: -12px;
+  background: linear-gradient(135deg, #1B6FBF, #2DB89A);
+  border-radius: 14px;
+  padding: .65rem 1rem;
+  display: flex; align-items: center; gap: .6rem;
+  box-shadow: 0 8px 24px rgba(27,111,191,.42);
+  z-index: 4; white-space: nowrap;
+}
+.home-img__duo-badge-num {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 1.45rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.home-img__duo-badge-txt {
+  font-size: .54rem; font-weight: 700;
+  color: rgba(255,255,255,.85);
+  text-transform: uppercase; letter-spacing: .06em; line-height: 1.45;
+}
+
+/* Dot grid bottom-left */
+.home-img__duo-dots {
+  position: absolute; bottom: -12px; left: -12px;
+  width: 68px; height: 68px;
+  background-image: radial-gradient(circle, rgba(45,184,154,.42) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none; z-index: 0;
+}
+
 /* ── Responsive ── */
 @media (max-width:1024px) {
   .hero__inner { gap:2.5rem; }
@@ -379,26 +753,14 @@ export default {
   .hero__btn { justify-content:center; max-width:100%; }
   .hero__visual { width:100%; align-items:flex-start; overflow:hidden; }
   .hero__card-stack {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: .75rem;
-    padding-bottom: .5rem;
-    animation: cardMarquee 12s linear infinite;
-    width: max-content;
+    display: flex; flex-wrap: nowrap; gap: .75rem; padding-bottom: .5rem;
+    animation: cardMarquee 12s linear infinite; width: max-content;
   }
   .hero__card-stack:hover { animation-play-state: paused; }
-  @keyframes cardMarquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-608px); }
-  }
-  .hcard {
-    flex: 0 0 140px;
-    width: 140px;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
-  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation: none; }
-  .hero__cards-hint { display: block; }
+  @keyframes cardMarquee { 0% { transform:translateX(0); } 100% { transform:translateX(-608px); } }
+  .hcard { flex:0 0 140px; width:140px; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
+  .hero__cards-hint { display:block; }
   .hero__scroll-cue { display:none; }
   .stats-band__inner { grid-template-columns:repeat(2,1fr); }
   .stat-item { border-right:none; border-bottom:1px solid rgba(10,22,40,.1); padding:1.6rem 1rem; }
@@ -410,16 +772,39 @@ export default {
   .why-section__layout { grid-template-columns:1fr; gap:2.5rem; }
   .why-section__grid { grid-template-columns:1fr; }
   .clients-grid { grid-template-columns:1fr; gap:1.2rem; }
+  /* Image 1 */
+  .home-img--split { margin-bottom: 1.4rem; }
+  .home-img__split-frame { height:210px; }
+  .home-img__split-thumb { width:76px; height:76px; left:-10px; }
+  /* Image 2 */
+  .home-img__banner-frame { height:185px; clip-path:polygon(1% 0%,99% 0%,100% 100%,0% 100%); }
+  .home-img__banner-caption { left:22px; bottom:20px; }
+  .home-img__banner-stats { right:20px; bottom:20px; gap:1rem; }
+  .home-img__banner-stat-num { font-size:1.5rem; }
+  /* Image 3 */
+  .home-img--duo { height:210px; margin-bottom:2.2rem; }
+  .home-img__duo-front { width:74%; }
 }
 @media (max-width:480px) {
   .hcard { width:125px; }
   .services-grid { gap:1rem; }
   .service-card { padding:1.6rem 1.4rem; }
   .client-card { padding:1.8rem 1.4rem; }
+  /* Image 1 */
+  .home-img__split-frame { height:185px; }
+  .home-img__split-pill { font-size:.52rem; }
+  /* Image 2 */
+  .home-img__banner-frame { height:160px; }
+  .home-img__banner-stats { display:none; }
+  /* Image 3 */
+  .home-img--duo { height:185px; }
+  .home-img__duo-badge { top:-10px; right:-8px; padding:.5rem .75rem; gap:.5rem; }
+  .home-img__duo-badge-num { font-size:1.15rem; }
 }
 @media (prefers-reduced-motion:reduce) {
   .hero__video { display:none; }
   .hcard--1,.hcard--2,.hcard--3,.hcard--4 { animation:none; }
   .scroll-dot { animation:none; }
+  .home-img__split-thumb-ring { animation:none; }
 }
 </style>

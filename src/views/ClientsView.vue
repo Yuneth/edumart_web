@@ -26,7 +26,7 @@
           <!-- Back photo: slightly behind and offset -->
           <div class="cli-img__overlap-back">
             <img
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=85"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/client1.jfif"
               alt="Partnership meeting"
             />
             <div class="cli-img__overlap-back-wash"></div>
@@ -34,7 +34,7 @@
           <!-- Front photo: forward and overlapping -->
           <div class="cli-img__overlap-front">
             <img
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=85"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/client2.jfif"
               alt="Client institution"
             />
             <div class="cli-img__overlap-front-wash"></div>
@@ -73,7 +73,7 @@
         <div class="cli-img cli-img--ribbon" data-aos="fade-up">
           <div class="cli-img__ribbon-frame">
             <img
-              src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1400&q=85"
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/client3.jfif"
               alt="Team partnership"
             />
             <div class="cli-img__ribbon-overlay"></div>
@@ -109,7 +109,7 @@
               <!-- Photo frame -->
               <div class="cli-img__mosaic-frame">
                 <img
-                  src="https://images.unsplash.com/photo-1553484771-047a44eee27b?w=700&q=85"
+                  src="https://ik.imagekit.io/kp5tixhur/Edumart/client9.png"
                   alt="Trust and reliability"
                 />
                 <div class="cli-img__mosaic-wash"></div>

@@ -26,11 +26,40 @@
           <p class="section-label">Business Model</p>
           <h2 class="section-title">How We <em>Operate</em></h2>
           <div class="divider"></div>
-          <p style="max-width:680px; font-size:.95rem; color:rgba(10,22,40,.65); line-height:1.85;">
-            Edumart operates as a centralized supply chain and operational management company
-            providing integrated services to institutional clients. Our model focuses on efficiency,
-            cost control, supplier consolidation, and scalable logistics systems.
-          </p>
+
+          <!-- ═══ IMAGE 1: Side-by-side split frame with content ═══ -->
+          <div class="inv-img inv-img--split" data-aos="fade-up" data-aos-delay="80">
+            <!-- Text column -->
+            <div class="inv-img__split-text">
+              <p style="font-size:.95rem; color:rgba(10,22,40,.65); line-height:1.85;">
+                Edumart operates as a centralized supply chain and operational management company
+                providing integrated services to institutional clients. Our model focuses on efficiency,
+                cost control, supplier consolidation, and scalable logistics systems.
+              </p>
+            </div>
+            <!-- Image column -->
+            <div class="inv-img__split-visual">
+              <!-- Back rotated card -->
+              <div class="inv-img__split-back"></div>
+              <!-- Main frame: clipped on left edge -->
+              <div class="inv-img__split-frame">
+                <img
+                  src="https://ik.imagekit.io/kp5tixhur/Edumart/Investment1.jpg"
+                  alt="Business operations"
+                />
+                <div class="inv-img__split-overlay"></div>
+                <!-- Inside caption -->
+                <div class="inv-img__split-caption">
+                  <span class="inv-img__split-eye">Centralized Model</span>
+                  <span class="inv-img__split-txt">Integrated &<br><em>Scalable Systems</em></span>
+                </div>
+              </div>
+              <!-- Dot grid -->
+              <div class="inv-img__split-dots"></div>
+              <!-- Corner bracket TL -->
+              <div class="inv-img__split-corner inv-img__split-corner--tl"></div>
+            </div>
+          </div>
         </div>
 
         <!-- Revenue Streams -->
@@ -50,6 +79,37 @@
           </div>
         </div>
 
+        <!-- ═══ IMAGE 2: Full-width panoramic ribbon — between Revenue and Advantage ═══ -->
+        <div class="inv-img inv-img--ribbon" data-aos="fade-up">
+          <div class="inv-img__ribbon-frame">
+            <img
+              src="https://ik.imagekit.io/kp5tixhur/Edumart/Investment2.jfif"
+              alt="Investment growth"
+            />
+            <div class="inv-img__ribbon-overlay"></div>
+            <!-- Left caption -->
+            <div class="inv-img__ribbon-caption">
+              <span class="inv-img__ribbon-eye">Our trajectory</span>
+              <span class="inv-img__ribbon-title">Positioned for<br><em>Long-Term Growth</em></span>
+            </div>
+            <!-- Right stat cluster -->
+            <div class="inv-img__ribbon-stats">
+              <div class="inv-img__ribbon-stat">
+                <span class="inv-img__ribbon-stat-num">6</span>
+                <span class="inv-img__ribbon-stat-lbl">Revenue<br>Streams</span>
+              </div>
+              <div class="inv-img__ribbon-stat-div"></div>
+              <div class="inv-img__ribbon-stat">
+                <span class="inv-img__ribbon-stat-num">SL</span>
+                <span class="inv-img__ribbon-stat-lbl">Country<br>Focus</span>
+              </div>
+            </div>
+          </div>
+          <!-- Wave notch bottom -->
+          <div class="inv-img__ribbon-notch"></div>
+          <div class="inv-img__ribbon-rule"></div>
+        </div>
+
         <!-- Competitive Advantage -->
         <div class="inv-advantage" data-aos="fade-up">
           <p class="section-label light">Our Edge</p>
@@ -61,6 +121,32 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>{{ adv }}</span>
+            </div>
+          </div>
+
+          <!-- ═══ IMAGE 3: Layered mosaic inside the dark advantage section ═══ -->
+          <div class="inv-img inv-img--mosaic" data-aos="zoom-in" data-aos-delay="100">
+            <!-- Spinning dashed ring -->
+            <div class="inv-img__mosaic-ring"></div>
+            <!-- Outer rotated border -->
+            <div class="inv-img__mosaic-border-outer"></div>
+            <!-- Photo -->
+            <div class="inv-img__mosaic-frame">
+              <img
+                src="https://ik.imagekit.io/kp5tixhur/Edumart/Investment3.jfif"
+                alt="Competitive edge"
+              />
+              <div class="inv-img__mosaic-wash"></div>
+            </div>
+            <!-- Floating badge -->
+            <div class="inv-img__mosaic-badge">
+              <span class="inv-img__mosaic-badge-num">6+</span>
+              <span class="inv-img__mosaic-badge-txt">Key<br>Advantages</span>
+            </div>
+            <!-- Teal tag -->
+            <div class="inv-img__mosaic-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              Our Edge
             </div>
           </div>
         </div>
@@ -97,7 +183,7 @@ export default {
 </script>
 
 <style scoped>
-/* Hero */
+/* ─── Hero ─── */
 .page-hero { position:relative; overflow:hidden; padding:120px 0 80px; }
 .page-hero__bg { position:absolute; inset:0; z-index:0; background:linear-gradient(135deg,#0F2236 0%,#0B1929 60%,#081523 100%); }
 .page-hero__bg::after { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#1B6FBF 30%,#2DB89A 70%,transparent); }
@@ -112,7 +198,7 @@ export default {
 .page-hero__crumbs a:hover { color:rgba(45,184,154,.9); }
 .page-hero__crumbs svg { opacity:.3; }
 
-/* Shared */
+/* ─── Shared ─── */
 .section-label { display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:#2DB89A; margin-bottom:.75rem; }
 .section-label.light { color:rgba(45,184,154,.9); }
 .section-title { font-family:var(--font-display,'Playfair Display',Georgia,serif); font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:400; color:#0B1929; line-height:1.15; }
@@ -122,7 +208,7 @@ export default {
 .divider { width:48px; height:2px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); margin:1.5rem 0; border-radius:2px; }
 .inv-section { margin-bottom:5rem; }
 
-/* Revenue Grid */
+/* ─── Revenue Grid ─── */
 .revenue-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
 .revenue-card { padding:2rem; border-radius:14px; border:1px solid #E8EEF5; background:#fff; box-shadow:0 2px 8px rgba(11,25,41,.05); transition:all .3s ease; position:relative; overflow:hidden; }
 .revenue-card::before { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,#1B6FBF,#2DB89A); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
@@ -133,7 +219,7 @@ export default {
 .revenue-card h4 { margin-bottom:.5rem; font-size:.95rem; color:#0B1929; font-weight:600; padding-right:3rem; }
 .revenue-card p { font-size:.85rem; color:#637A95; line-height:1.7; }
 
-/* Competitive Advantage */
+/* ─── Competitive Advantage ─── */
 .inv-advantage { border-radius:20px; padding:4rem; position:relative; overflow:hidden; margin-bottom:2rem; background:linear-gradient(135deg,#0F2236 0%,#0B1929 100%); }
 .inv-advantage::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,#1B6FBF 30%,#2DB89A 70%,transparent); }
 .inv-advantage::after { content:''; position:absolute; bottom:-100px; right:-100px; width:400px; height:400px; border-radius:50%; background:radial-gradient(ellipse,rgba(45,184,154,.06) 0%,transparent 65%); pointer-events:none; }
@@ -143,8 +229,301 @@ export default {
 .advantage-check { width:24px; height:24px; background:rgba(45,184,154,.15); border:1px solid rgba(45,184,154,.3); border-radius:50%; display:grid; place-items:center; color:#2DB89A; flex-shrink:0; margin-top:.05rem; }
 .advantage-item span:last-child { font-size:.875rem; color:rgba(255,255,255,.72); line-height:1.65; }
 
-/* Responsive */
-@media (max-width:900px) { .revenue-grid { grid-template-columns:1fr 1fr; } .advantage-grid { grid-template-columns:1fr; } .inv-advantage { padding:3rem 2rem; } }
-@media (max-width:768px) { .page-hero { padding:100px 0 60px; } .inv-advantage { padding:2.5rem 1.5rem; border-radius:14px; } }
-@media (max-width:580px) { .revenue-grid { grid-template-columns:1fr; } .revenue-card { padding:1.5rem; } .revenue-card__num { font-size:1.8rem; } .inv-advantage { padding:2rem 1.25rem; } }
+/* ════════════════════════════════════════════════════
+   IMAGE 1 — Side-by-side split: text + photo
+   (replaces the plain paragraph in Business Model)
+   ════════════════════════════════════════════════════ */
+.inv-img--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 0;
+}
+
+.inv-img__split-text {
+  /* the <p> inside inherits its own style */
+}
+
+.inv-img__split-visual {
+  position: relative;
+  padding: 14px 0 14px 14px;
+}
+
+/* Rotated back card */
+.inv-img__split-back {
+  position: absolute;
+  inset: 0 -10px 0 22px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(27,111,191,.1), rgba(45,184,154,.14));
+  border: 1px solid rgba(45,184,154,.2);
+  transform: rotate(-3deg);
+  z-index: 0;
+}
+
+/* Main clipped photo */
+.inv-img__split-frame {
+  position: relative;
+  width: 100%; height: 280px;
+  /* Angled clip: top-left corner cut */
+  clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 8%);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(10,22,40,.17);
+  z-index: 1;
+}
+.inv-img__split-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .6s ease;
+}
+.inv-img--split:hover .inv-img__split-frame img { transform: scale(1.05); }
+.inv-img__split-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10,22,40,.06) 0%,
+    rgba(10,22,40,.55) 100%
+  );
+}
+
+/* Inside bottom caption */
+.inv-img__split-caption {
+  position: absolute; bottom: 22px; left: 22px;
+  display: flex; flex-direction: column; gap: .26rem; z-index: 2;
+}
+.inv-img__split-eye {
+  font-size: .52rem; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: #2DB89A;
+}
+.inv-img__split-txt {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: clamp(.95rem,1.8vw,1.2rem); font-weight: 300; color: #fff; line-height: 1.25;
+}
+.inv-img__split-txt em { font-style: italic; color: #2DB89A; }
+
+/* Dot grid top-right */
+.inv-img__split-dots {
+  position: absolute;
+  top: -4px; right: -18px;
+  width: 70px; height: 70px;
+  background-image: radial-gradient(circle, rgba(45,184,154,.45) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  pointer-events: none; z-index: 0;
+}
+
+/* TL corner bracket */
+.inv-img__split-corner {
+  position: absolute;
+  width: 28px; height: 28px;
+  pointer-events: none; z-index: 3;
+}
+.inv-img__split-corner--tl {
+  top: 20px; left: 20px;
+  border-top: 2px solid rgba(45,184,154,.65);
+  border-left: 2px solid rgba(45,184,154,.65);
+}
+
+/* ════════════════════════════════════════════════════
+   IMAGE 2 — Full-width panoramic ribbon
+   (between Revenue and Competitive Advantage)
+   ════════════════════════════════════════════════════ */
+.inv-img--ribbon {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.inv-img__ribbon-frame {
+  position: relative;
+  width: 100%; height: 220px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10,22,40,.13);
+}
+.inv-img__ribbon-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%; display: block;
+  transition: transform .65s ease;
+}
+.inv-img--ribbon:hover .inv-img__ribbon-frame img { transform: scale(1.04); }
+.inv-img__ribbon-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg,
+    rgba(10,22,40,.84) 0%,
+    rgba(10,22,40,.4) 52%,
+    rgba(27,111,191,.26) 100%
+  );
+}
+
+/* Left caption */
+.inv-img__ribbon-caption {
+  position: absolute; bottom: 28px; left: 36px;
+  display: flex; flex-direction: column; gap: .3rem; z-index: 2;
+}
+.inv-img__ribbon-eye {
+  font-size: .54rem; font-weight: 700; letter-spacing: .24em;
+  text-transform: uppercase; color: #2DB89A;
+}
+.inv-img__ribbon-title {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: clamp(1rem,2.5vw,1.6rem); font-weight: 300; color: #fff; line-height: 1.22;
+}
+.inv-img__ribbon-title em { font-style: italic; color: #2DB89A; }
+
+/* Right stat cluster */
+.inv-img__ribbon-stats {
+  position: absolute; right: 36px; bottom: 28px;
+  display: flex; align-items: center; gap: 1.3rem; z-index: 2;
+}
+.inv-img__ribbon-stat { display: flex; flex-direction: column; gap: .2rem; text-align: right; }
+.inv-img__ribbon-stat-num {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 2rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.inv-img__ribbon-stat-lbl {
+  font-size: .52rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: rgba(255,255,255,.5); line-height: 1.45;
+}
+.inv-img__ribbon-stat-div {
+  width: 1px; height: 36px;
+  background: rgba(255,255,255,.18);
+}
+
+/* Wave notch cut from bottom */
+.inv-img__ribbon-notch {
+  width: 140px; height: 28px;
+  background: #fff;
+  clip-path: ellipse(50% 100% at 50% 100%);
+  margin: 0 auto;
+  margin-top: -2px;
+  position: relative; z-index: 1;
+}
+.inv-img__ribbon-rule {
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A, #1B6FBF);
+  margin-top: -28px;
+  position: relative; z-index: 0;
+}
+
+/* ════════════════════════════════════════════════════
+   IMAGE 3 — Layered mosaic inside dark advantage box
+   ════════════════════════════════════════════════════ */
+.inv-img--mosaic {
+  position: relative;
+  width: 190px; height: 190px;
+  margin: 2.5rem auto 0;
+  z-index: 1;
+}
+
+/* Spinning dashed outer ring */
+.inv-img__mosaic-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(45,184,154,.35);
+  animation: spin-slow 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+/* Outer rotated border square */
+.inv-img__mosaic-border-outer {
+  position: absolute; inset: 0;
+  border: 1.5px solid rgba(45,184,154,.2);
+  border-radius: 22px;
+  transform: rotate(10deg);
+}
+
+/* Photo frame */
+.inv-img__mosaic-frame {
+  position: absolute;
+  inset: 16px;
+  border-radius: 16px;
+  transform: rotate(6deg);
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+}
+.inv-img__mosaic-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transform: rotate(-6deg) scale(1.2);
+  transition: transform .55s ease;
+}
+.inv-img--mosaic:hover .inv-img__mosaic-frame img { transform: rotate(-6deg) scale(1.28); }
+.inv-img__mosaic-wash {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(27,111,191,.3), rgba(45,184,154,.2));
+  mix-blend-mode: multiply;
+}
+
+/* Floating gradient badge bottom-right */
+.inv-img__mosaic-badge {
+  position: absolute;
+  bottom: -12px; right: -20px;
+  background: linear-gradient(135deg, #1B6FBF, #2DB89A);
+  border-radius: 14px;
+  padding: .6rem .95rem;
+  display: flex; align-items: center; gap: .6rem;
+  box-shadow: 0 8px 24px rgba(27,111,191,.45);
+  z-index: 5; white-space: nowrap;
+}
+.inv-img__mosaic-badge-num {
+  font-family: var(--font-display,'Playfair Display',Georgia,serif);
+  font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1;
+}
+.inv-img__mosaic-badge-txt {
+  font-size: .56rem; font-weight: 700;
+  color: rgba(255,255,255,.85);
+  text-transform: uppercase; letter-spacing: .06em; line-height: 1.45;
+}
+
+/* Tag label top-left */
+.inv-img__mosaic-tag {
+  position: absolute;
+  top: -12px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(90deg, #1B6FBF, #2DB89A);
+  color: #fff;
+  font-size: .58rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: .36rem 1rem .36rem .78rem;
+  border-radius: 999px;
+  display: flex; align-items: center; gap: .4rem;
+  box-shadow: 0 4px 14px rgba(27,111,191,.4);
+  white-space: nowrap; z-index: 5;
+}
+
+/* ─── Responsive ─── */
+@media (max-width:900px) {
+  .revenue-grid { grid-template-columns:1fr 1fr; }
+  .advantage-grid { grid-template-columns:1fr; }
+  .inv-advantage { padding:3rem 2rem; }
+  /* Image 1 */
+  .inv-img--split { grid-template-columns:1fr; gap:2.5rem; }
+  .inv-img__split-frame { height:240px; }
+}
+@media (max-width:768px) {
+  .page-hero { padding:100px 0 60px; }
+  .inv-advantage { padding:2.5rem 1.5rem; border-radius:14px; }
+  /* Image 2 */
+  .inv-img__ribbon-frame { height:185px; }
+  .inv-img__ribbon-caption { left:22px; bottom:20px; }
+  .inv-img__ribbon-stats { right:18px; bottom:20px; gap:1rem; }
+  .inv-img__ribbon-stat-num { font-size:1.5rem; }
+  /* Image 3 */
+  .inv-img--mosaic { width:165px; height:165px; }
+}
+@media (max-width:580px) {
+  .revenue-grid { grid-template-columns:1fr; }
+  .revenue-card { padding:1.5rem; }
+  .revenue-card__num { font-size:1.8rem; }
+  .inv-advantage { padding:2rem 1.25rem; }
+  /* Image 1 */
+  .inv-img__split-frame { height:210px; }
+  /* Image 2 */
+  .inv-img__ribbon-frame { height:160px; }
+  .inv-img__ribbon-stats { display:none; }
+  /* Image 3 */
+  .inv-img--mosaic { width:145px; height:145px; }
+  .inv-img__mosaic-badge { right:-12px; padding:.5rem .75rem; gap:.5rem; }
+  .inv-img__mosaic-badge-num { font-size:1.15rem; }
+}
 </style>
